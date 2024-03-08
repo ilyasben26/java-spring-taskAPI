@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
 @ActiveProfiles("test")
-public class UserRepositoryTest {
+public class UserRepositoryTests {
     @Autowired
     private UserRepository userRepository;
 
@@ -60,6 +60,67 @@ public class UserRepositoryTest {
         // Assert
         assertThat(userList).isNotNull();
         assertThat(userList.size()).isEqualTo(2);
+    }
 
+    @Test
+    public void UserRepository_FindById_ReturnsUser() {
+        // Arrange
+        User user = User.builder()
+                .username("test_user01")
+                .password("test_password")
+                .build();
+
+        userRepository.save(user);
+
+
+        // Act
+        User foundUser = userRepository.findById(user.getId()).orElse(null);
+
+        // Assert
+        assertThat(foundUser).isNotNull();
+        assertThat(user.getId()).isEqualTo(foundUser.getId());
+    }
+
+    @Test
+    public void UserRepository_Delete_UserIsDeleted() {
+        // Arrange
+        User user = User.builder()
+                .username("test_user01")
+                .password("test_password")
+                .build();
+        userRepository.save(user);
+        User userFound = userRepository.findById(user.getId()).get();
+
+        // Act
+        userRepository.delete(userFound);
+
+        // Assert
+        assertThat(userRepository.findById(userFound.getId()).isPresent()).isFalse();
+    }
+
+    @Test
+    public void UserRepository_existsByUsername_ReturnsTrue() {
+        // Arrange
+        User user = User.builder()
+                .username("test_user01")
+                .password("test_password")
+                .build();
+        userRepository.save(user);
+
+        // Act & Assert
+        assertThat(userRepository.existsByUsername(user.getUsername())).isTrue();
+    }
+
+    @Test
+    public void UserRepository_existsByUsername_ReturnsFalse() {
+        // Arrange
+        User user = User.builder()
+                .username("test_user01")
+                .password("test_password")
+                .build();
+        userRepository.save(user);
+
+        // Act & Assert
+        assertThat(userRepository.existsByUsername("test_user01111")).isFalse();
     }
 }
