@@ -55,58 +55,57 @@ public class UserServiceTests {
 
     @Test
     public void UserService_getUserById_ReturnsUserDTO_WhenUserExists() {
-        // Given
+        // Arrange
         Long userId = 1L;
         User user = new User();
         user.setId(userId);
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
 
         UserDTO userDTO = new UserDTO();
-        userDTO.setId(userId); // Assuming the id is directly mapped
+        userDTO.setId(userId);
 
-        // Mocking the ModelMapper behavior
         when(modelMapper.map(user, UserDTO.class)).thenReturn(userDTO);
 
-        // When
+        // Act
         UserDTO result = userService.getUserById(userId);
 
-        // Then
+        // Assert
         assertNotNull(result);
         assertEquals(userId, result.getId());
     }
 
     @Test
     public void UserService_getUserById_ThrowsUserNotFoundException_WhenUserDoesNotExist() {
-        // Given
+        // Arrange
         Long userId = 1L;
         when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-        // When & Then
+        // Act & Assert
         assertThrows(UserNotFoundException.class, () -> userService.getUserById(userId));
     }
 
     @Test
     public void UserService_deleteUser_DeletesUser_WhenUserExists() {
-        // Given
+        // Arrange
         Long userId = 1L;
         User user = new User();
         user.setId(userId);
         when(userRepository.findById(userId)).thenReturn(Optional.of(user));
 
-        // When
+        // Act
         userService.deleteUser(userId);
 
-        // Then
+        // Assert
         verify(userRepository, times(1)).delete(user);
     }
 
     @Test
     public void UserService_deleteUser_ThrowsUserNotFoundException_WhenUserDoesNotExist() {
-        // Given
+        // Arrange
         Long userId = 1L;
         when(userRepository.findById(userId)).thenReturn(Optional.empty());
 
-        // When & Then
+        // Act & Assert
         assertThrows(UserNotFoundException.class, () -> userService.deleteUser(userId));
     }
 }
