@@ -1,4 +1,4 @@
-package com.ilyasben.taskAPI;
+package com.ilyasben.taskAPI.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

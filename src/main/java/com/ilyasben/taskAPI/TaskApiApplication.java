@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TaskApiApplication implements CommandLineRunner {
+public class TaskApiApplication  {
 
 	@Autowired
 	private UserRepository userRepository;
@@ -20,24 +20,8 @@ public class TaskApiApplication implements CommandLineRunner {
 
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(TaskApiApplication.class, args);
-	}
-
-	@Override
-	public void run(String... args) throws Exception {
-
-		// putting sample data in the db
-		User user = new User();
-		user.setPassword("should be hashed later on :)");
-		user.setUsername("Ilyas");
-
-		Todo todo = new Todo();
-		todo.setContent("Update CV");
-
-		user.getTodoList().add(todo);
-
-		todoRepository.save(todo);
-		userRepository.save(user);
 
 	}
 }

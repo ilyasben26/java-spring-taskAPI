@@ -40,14 +40,6 @@ public class UserService {
         User user = userRepository.findById(userId)
                 .orElseThrow( () -> new UserNotFoundException("User not found"));
         return modelMapper.map(user, UserDTO.class);
-
-        /*
-        if (userRepository.findById(userId).isEmpty()) {
-            throw new UserNotFoundException("User not found");
-        } else {
-            User user = userRepository.findById(userId).get();
-            return modelMapper.map(user, UserDTO.class);
-        }*/
     }
 
     public UserDTO addUser(CreateUserRequest createUserRequest) {
