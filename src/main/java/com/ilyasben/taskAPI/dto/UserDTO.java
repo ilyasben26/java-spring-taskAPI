@@ -16,7 +16,6 @@ public class UserDTO {
     private Long id;
     private String username;
     // password was hidden for more security
-    private List<TodoDTO> todoList;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
 

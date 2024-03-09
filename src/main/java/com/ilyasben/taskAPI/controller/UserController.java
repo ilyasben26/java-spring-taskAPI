@@ -7,6 +7,7 @@ import com.ilyasben.taskAPI.dto.UserDTO;
 import com.ilyasben.taskAPI.exception.UserNotFoundException;
 import com.ilyasben.taskAPI.exception.UsernameAlreadyExistsException;
 import com.ilyasben.taskAPI.model.User;
+import com.ilyasben.taskAPI.request.CreateTodoRequest;
 import com.ilyasben.taskAPI.request.CreateUserRequest;
 import com.ilyasben.taskAPI.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,9 +80,18 @@ public class UserController {
     @GetMapping("/{userId}/todos")
     public ResponseEntity<?> getAllTodosForUser(@PathVariable Long userId) {
         try {
-            UserDTO user = userService.getUserById(userId);
-            List<TodoDTO> todos = user.getTodoList();
+            List<TodoDTO> todos = userService.getTodosForUser(userId);
             return new ResponseEntity<>(todos, HttpStatus.OK);
+        } catch (UserNotFoundException ex) {
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/{userId}/todo")
+    public ResponseEntity<?> createTodoForUser(@PathVariable Long userId, @RequestBody CreateTodoRequest createTodoRequest) {
+        try {
+            userService.createTodoForUser(userId, createTodoRequest);
+            return new ResponseEntity<>("To-Do added successfully to user.", HttpStatus.OK);
         } catch (UserNotFoundException ex) {
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
         }

@@ -1,10 +1,14 @@
 package com.ilyasben.taskAPI.service;
 
+import com.ilyasben.taskAPI.dto.TodoDTO;
 import com.ilyasben.taskAPI.dto.UserDTO;
 import com.ilyasben.taskAPI.exception.UserNotFoundException;
 import com.ilyasben.taskAPI.exception.UsernameAlreadyExistsException;
+import com.ilyasben.taskAPI.model.Todo;
 import com.ilyasben.taskAPI.model.User;
+import com.ilyasben.taskAPI.repository.TodoRepository;
 import com.ilyasben.taskAPI.repository.UserRepository;
+import com.ilyasben.taskAPI.request.CreateTodoRequest;
 import com.ilyasben.taskAPI.request.CreateUserRequest;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +24,15 @@ import java.util.stream.Collectors;
 public class UserService {
     // dependency injections
     private UserRepository userRepository;
+
+    private TodoRepository todoRepository;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public UserService(UserRepository userRepository, ModelMapper modelMapper) {
+    public UserService(UserRepository userRepository, TodoRepository todoRepository ,ModelMapper modelMapper) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
+        this.todoRepository = todoRepository;
     }
 
     public List<UserDTO> getUsers() {
@@ -78,6 +85,29 @@ public class UserService {
                                 .orElseThrow(() -> new UserNotFoundException("User not found"));
         userRepository.delete(user);
     }
+
+    public boolean createTodoForUser(Long userId, CreateTodoRequest createTodoRequest) {
+        // Find the user
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+        // Create the To-Do
+        Todo todo = modelMapper.map(createTodoRequest, Todo.class);
+        todo.setUser(user);
+        // Save the To-Do
+        todoRepository.save(todo);
+        return true;
+    }
+
+    public List<TodoDTO> getTodosForUser(Long userId) {
+        // Find the user
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+        List<Todo> todos = todoRepository.findByUserId(userId);
+        return todos.stream()
+                .map(todo -> modelMapper.map(todo, TodoDTO.class))
+                .collect(Collectors.toList());
+    }
+
 
     public UserDTO convertToDto(User user) {
         return modelMapper.map(user, UserDTO.class);

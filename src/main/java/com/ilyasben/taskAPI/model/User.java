@@ -28,14 +28,10 @@ public class User {
     private String username;
     private String password;
 
-    @OneToMany(cascade = CascadeType.MERGE, orphanRemoval = true)
-    @JoinColumn(name = "user_id")
-    private List<Todo> todoList = new ArrayList<>();
 
     @CreationTimestamp
     private LocalDateTime createdOn;
     @UpdateTimestamp
     private LocalDateTime updatedOn;
-
 
 }

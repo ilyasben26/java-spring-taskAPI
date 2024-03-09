@@ -17,4 +17,5 @@ public class TodoDTO {
     private boolean completed;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
+    private UserDTO user;
 }
