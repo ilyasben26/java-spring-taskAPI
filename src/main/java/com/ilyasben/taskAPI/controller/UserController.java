@@ -97,6 +97,26 @@ public class UserController {
         }
     }
 
+    @PutMapping("/{userId}/todo/{todoId}/toggle")
+    public ResponseEntity<?> toggleTodoForUser(@PathVariable Long userId, @PathVariable Long todoId) {
+        try {
+            TodoDTO todoDTO = userService.toggleTodoForUser(userId, todoId);
+            return new ResponseEntity<>(todoDTO, HttpStatus.OK);
+        } catch (RuntimeException re) {
+            return new ResponseEntity<>(re.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+    // todo: implement update todo
+    @PutMapping("/{userId}/todo/{todoId}")
+    public ResponseEntity<?> updateTodoForUser(@PathVariable Long userId, @PathVariable Long todoId, @RequestBody CreateTodoRequest createTodoRequest) {
+        try {
+            TodoDTO todoDTO = userService.updateTodoForUser(userId, todoId, createTodoRequest);
+            return new ResponseEntity<>(todoDTO, HttpStatus.OK);
+        } catch (RuntimeException re) {
+            return new ResponseEntity<>(re.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
     /*
 
     @PostMapping("/{userId}/todos")

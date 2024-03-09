@@ -2,6 +2,7 @@ package com.ilyasben.taskAPI.service;
 
 import com.ilyasben.taskAPI.dto.TodoDTO;
 import com.ilyasben.taskAPI.dto.UserDTO;
+import com.ilyasben.taskAPI.exception.TodoNotFoundException;
 import com.ilyasben.taskAPI.exception.UserNotFoundException;
 import com.ilyasben.taskAPI.exception.UsernameAlreadyExistsException;
 import com.ilyasben.taskAPI.model.Todo;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -106,6 +108,35 @@ public class UserService {
         return todos.stream()
                 .map(todo -> modelMapper.map(todo, TodoDTO.class))
                 .collect(Collectors.toList());
+    }
+
+    public TodoDTO toggleTodoForUser(Long userId, Long todoId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        Todo todo = todoRepository.findById(todoId)
+                .orElseThrow(() -> new TodoNotFoundException("Todo not found"));
+
+        if (!Objects.equals(todo.getUser().getId(), user.getId())) throw  new TodoNotFoundException("Todo not found");
+
+        todo.setCompleted(!todo.isCompleted());
+        todoRepository.save(todo);
+        return modelMapper.map(todo, TodoDTO.class);
+    }
+
+    public TodoDTO updateTodoForUser(Long userId, Long todoId, CreateTodoRequest createTodoRequest) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        Todo todo = todoRepository.findById(todoId)
+                .orElseThrow(() -> new TodoNotFoundException("Todo not found"));
+
+        if (!Objects.equals(todo.getUser().getId(), user.getId())) throw  new TodoNotFoundException("Todo not found for user");
+
+        todo.setContent(createTodoRequest.getContent());
+
+        todoRepository.save(todo);
+        return modelMapper.map(todo, TodoDTO.class);
     }
 
 
