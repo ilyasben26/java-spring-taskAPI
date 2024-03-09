@@ -108,4 +108,78 @@ public class UserServiceTests {
         // Act & Assert
         assertThrows(UserNotFoundException.class, () -> userService.deleteUser(userId));
     }
+
+    @Test
+    void updateUser_Successfully() {
+
+        // Arrange
+        Long userId = 1L;
+        CreateUserRequest updatedUserInfo = new CreateUserRequest("newUsername", "newPassword");
+        User existingUser = User.builder()
+                .id(userId)
+                .username("oldUsername")
+                .password("oldPassword")
+                .build();
+
+        User updatedUser = User.builder()
+                .id(userId)
+                .username("newUsername")
+                .password("newPassword")
+                .build();
+
+        UserDTO expectedDTO = UserDTO.builder()
+                .id(updatedUser.getId())
+                .username(updatedUser.getUsername())
+                .build();
+
+        when(userRepository.existsByUsernameAndIdNot(updatedUserInfo.getUsername(), userId)).thenReturn(false);
+        when(userRepository.findById(userId)).thenReturn(Optional.of(existingUser));
+        when(userRepository.save(existingUser)).thenReturn(updatedUser);
+        when(modelMapper.map(updatedUser, UserDTO.class)).thenReturn(expectedDTO);
+
+        UserDTO result = userService.updateUser(userId, updatedUserInfo);
+
+        assertEquals(expectedDTO, result);
+        assertEquals(updatedUserInfo.getUsername(), updatedUser.getUsername());
+
+
+
+        assertNotNull(updatedUser);
+        assertEquals("newUsername", updatedUser.getUsername());
+        assertEquals("newPassword", updatedUser.getPassword());
+
+        verify(userRepository, times(1)).existsByUsernameAndIdNot(updatedUserInfo.getUsername(), userId);
+        verify(userRepository, times(1)).findById(userId);
+        verify(userRepository, times(1)).save(existingUser);
+        verify(modelMapper, times(1)).map(updatedUser, UserDTO.class);
+    }
+
+    @Test
+    void updateUser_UsernameAlreadyExists() {
+        Long userId = 1L;
+        CreateUserRequest updatedUserInfo = new CreateUserRequest("existingUsername", "newPassword");
+
+        when(userRepository.existsByUsernameAndIdNot(updatedUserInfo.getUsername(), userId)).thenReturn(true);
+
+        assertThrows(UsernameAlreadyExistsException.class, () -> userService.updateUser(userId, updatedUserInfo));
+        verify(userRepository, times(1)).existsByUsernameAndIdNot(updatedUserInfo.getUsername(), userId);
+        verify(userRepository, never()).findById(anyLong());
+        verify(userRepository, never()).save(any());
+        verify(modelMapper, never()).map(any(), any());
+    }
+
+    @Test
+    void updateUser_UserNotFound() {
+        Long userId = 1L;
+        CreateUserRequest updatedUserInfo = new CreateUserRequest("newUsername", "newPassword");
+
+        when(userRepository.existsByUsernameAndIdNot(updatedUserInfo.getUsername(), userId)).thenReturn(false);
+        when(userRepository.findById(userId)).thenReturn(Optional.empty());
+
+        assertThrows(UserNotFoundException.class, () -> userService.updateUser(userId, updatedUserInfo));
+        verify(userRepository, times(1)).existsByUsernameAndIdNot(updatedUserInfo.getUsername(), userId);
+        verify(userRepository, times(1)).findById(userId);
+        verify(userRepository, never()).save(any());
+        verify(modelMapper, never()).map(any(), any());
+    }
 }

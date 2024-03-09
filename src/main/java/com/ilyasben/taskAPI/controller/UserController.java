@@ -1,10 +1,12 @@
 package com.ilyasben.taskAPI.controller;
 
 
+import com.ilyasben.taskAPI.dto.TodoDTO;
 import com.ilyasben.taskAPI.dto.UserDTO;
 
 import com.ilyasben.taskAPI.exception.UserNotFoundException;
 import com.ilyasben.taskAPI.exception.UsernameAlreadyExistsException;
+import com.ilyasben.taskAPI.model.User;
 import com.ilyasben.taskAPI.request.CreateUserRequest;
 import com.ilyasben.taskAPI.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +30,6 @@ public class UserController {
 
     @GetMapping("")
     public List<UserDTO> getUsers() {
-        // TODO: test what happens when there are no users
         return userService.getUsers();
     }
 
@@ -46,9 +47,10 @@ public class UserController {
     @PostMapping
     public ResponseEntity<?> addUser(@RequestBody CreateUserRequest createUserRequest) {
         try {
-            return new ResponseEntity<>(userService.addUser(createUserRequest), HttpStatus.OK);
-        } catch (UsernameAlreadyExistsException usernameAlreadyExistsException) {
-            return new ResponseEntity<>(usernameAlreadyExistsException.getMessage(), HttpStatus.CONFLICT);
+            UserDTO userDTO = userService.addUser(createUserRequest);
+            return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        } catch (UsernameAlreadyExistsException ex) {
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
         }
     }
 
@@ -59,6 +61,29 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).build();
         } catch (UserNotFoundException userNotFoundException) {
             return new ResponseEntity<>(userNotFoundException.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PatchMapping("/{userId}")
+    public ResponseEntity<?> updateUser(@PathVariable Long userId, @RequestBody CreateUserRequest createUserRequest) {
+        try {
+            UserDTO userDTO = userService.updateUser(userId, createUserRequest);
+            return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        } catch (UsernameAlreadyExistsException ex) {
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+        } catch (UserNotFoundException ex) {
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/{userId}/todos")
+    public ResponseEntity<?> getAllTodosForUser(@PathVariable Long userId) {
+        try {
+            UserDTO user = userService.getUserById(userId);
+            List<TodoDTO> todos = user.getTodoList();
+            return new ResponseEntity<>(todos, HttpStatus.OK);
+        } catch (UserNotFoundException ex) {
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 

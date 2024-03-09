@@ -55,6 +55,23 @@ public class UserService {
 
     }
 
+    public UserDTO updateUser(Long userId, CreateUserRequest updatedUserInfo) {
+        // Check if the username already exists
+        if (userRepository.existsByUsernameAndIdNot(updatedUserInfo.getUsername(), userId)) {
+            throw new UsernameAlreadyExistsException("Username already exists");
+        }
+
+        User existingUser = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        existingUser.setUsername(updatedUserInfo.getUsername());
+        existingUser.setPassword(updatedUserInfo.getPassword());
+
+        User updatedUser = userRepository.save(existingUser);
+
+        return modelMapper.map(updatedUser, UserDTO.class);
+    }
+
     public void deleteUser(Long userId) {
         // checking if the user exists
         User user = userRepository.findById(userId)
@@ -65,5 +82,6 @@ public class UserService {
     public UserDTO convertToDto(User user) {
         return modelMapper.map(user, UserDTO.class);
     }
+
 
 }

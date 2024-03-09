@@ -19,5 +19,6 @@ public class UserDTO {
     private List<TodoDTO> todoList;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
+
 }
 
