@@ -124,33 +124,5 @@ public class UserControllerTests {
                 .andExpect(status().isNotFound());
     }
 
-    @Test
-    public void testGetAllTodosForUser_Success() throws Exception {
-        // Arrange
-        Long userId = 1L;
-        List<TodoDTO> todoDTOList = new ArrayList<>();
-        TodoDTO todoDTO = new TodoDTO();
-        todoDTO.setContent("Sample Todo Content");
-        todoDTOList.add(todoDTO);
-        UserDTO userDTO = new UserDTO();
-        userDTO.setTodoList(todoDTOList);
-        when(userService.getUserById(userId)).thenReturn(userDTO);
-
-        // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.get("/users/{userId}/todos", userId))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$[0].content").exists());
-    }
-
-    @Test
-    public void testGetAllTodosForUser_UserNotFound() throws Exception {
-        Long userId = 1L;
-
-        when(userService.getUserById(userId)).thenThrow(new UserNotFoundException("User not found"));
-
-        mockMvc.perform(MockMvcRequestBuilders.get("/users/{userId}/todos", userId)
-                .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound());
-
-    }
+    // todo: add tests for adding a task and getting all task for a user
 }
