@@ -4,8 +4,12 @@ import com.ilyasben.taskAPI.model.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-    Boolean existsByUsername(String username);
+import java.util.Optional;
 
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    Optional<User> findByUsername(String username);
+    Boolean existsByUsername(String username);
     boolean existsByUsernameAndIdNot(String username, Long userId);
+
 }
