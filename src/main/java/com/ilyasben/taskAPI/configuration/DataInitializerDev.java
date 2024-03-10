@@ -1,5 +1,4 @@
 package com.ilyasben.taskAPI.configuration;
-import com.ilyasben.taskAPI.model.Todo;
 import com.ilyasben.taskAPI.model.User;
 import com.ilyasben.taskAPI.repository.TodoRepository;
 import com.ilyasben.taskAPI.repository.UserRepository;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Profile("dev") // Run only in development profile
-public class DataInitializer implements CommandLineRunner {
+public class DataInitializerDev implements CommandLineRunner {
 
     @Autowired
     private UserRepository userRepository;

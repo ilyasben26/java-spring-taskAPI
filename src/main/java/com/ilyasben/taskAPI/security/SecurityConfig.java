@@ -34,7 +34,8 @@ public class SecurityConfig {
         httpSecurity
                 .csrf().disable() // TODO: turn CSRF back on in prod
                 .authorizeHttpRequests()
-                .requestMatchers(HttpMethod.GET).authenticated()
+                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/swagger-ui/**").permitAll() // todo: remove in prod
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();
@@ -42,22 +43,6 @@ public class SecurityConfig {
         return httpSecurity.build();
     }
 
-    // TODO: figure out how to use my existing user class with the spring user class
-    @Bean
-    public UserDetailsService users() {
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password("password")
-                .roles("ADMIN")
-                .build();
-        UserDetails user = User.builder()
-                .username("user")
-                .password("password")
-                .roles("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin, user);
-    }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception  {
