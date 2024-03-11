@@ -51,18 +51,6 @@ public class UserService {
         return modelMapper.map(user, UserDTO.class);
     }
 
-    public UserDTO addUser(CreateUserRequest createUserRequest) {
-        // TODO: check for DB constraint violations
-        // checking if the username already exists
-        if (userRepository.existsByUsername(createUserRequest.getUsername())) {
-            throw new UsernameAlreadyExistsException("Username already exists");
-        } else {
-            User user = modelMapper.map(createUserRequest, User.class);
-            User savedUser = userRepository.save(user);
-            return modelMapper.map(savedUser, UserDTO.class);
-        }
-
-    }
 
     public UserDTO updateUser(Long userId, CreateUserRequest updatedUserInfo) {
         // Check if the username already exists

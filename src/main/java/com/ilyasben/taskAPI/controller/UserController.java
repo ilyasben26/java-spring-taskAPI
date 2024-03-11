@@ -30,8 +30,13 @@ public class UserController {
 
 
     @GetMapping("")
-    public List<UserDTO> getUsers() {
-        return userService.getUsers();
+    public ResponseEntity<?> getUsers() {
+        try {
+            return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
+        } catch (RuntimeException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
 
@@ -45,15 +50,6 @@ public class UserController {
 
     }
 
-    @PostMapping
-    public ResponseEntity<?> addUser(@RequestBody CreateUserRequest createUserRequest) {
-        try {
-            UserDTO userDTO = userService.addUser(createUserRequest);
-            return new ResponseEntity<>(userDTO, HttpStatus.OK);
-        } catch (UsernameAlreadyExistsException ex) {
-            return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
-        }
-    }
 
     @DeleteMapping("/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
@@ -107,7 +103,6 @@ public class UserController {
         }
     }
 
-    // todo: implement update todo
     @PutMapping("/{userId}/todo/{todoId}")
     public ResponseEntity<?> updateTodoForUser(@PathVariable Long userId, @PathVariable Long todoId, @RequestBody CreateTodoRequest createTodoRequest) {
         try {

@@ -3,6 +3,7 @@ package com.ilyasben.taskAPI.configuration;
 import com.ilyasben.taskAPI.model.Role;
 import com.ilyasben.taskAPI.model.User;
 import com.ilyasben.taskAPI.repository.RoleRepository;
+import com.ilyasben.taskAPI.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,6 +17,9 @@ public class DataInitializerAll implements CommandLineRunner {
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -33,5 +37,7 @@ public class DataInitializerAll implements CommandLineRunner {
         User admin = new User();
         admin.setUsername("Admin");
         admin.setPassword(passwordEncoder.encode("password")); // encoding the password
+
+        userRepository.save(admin);
     }
 }

@@ -1,11 +1,13 @@
 package com.ilyasben.taskAPI.controller;
 
+import com.ilyasben.taskAPI.dto.AuthResponseDTO;
 import com.ilyasben.taskAPI.dto.LoginDTO;
 import com.ilyasben.taskAPI.dto.RegisterDTO;
 import com.ilyasben.taskAPI.model.Role;
 import com.ilyasben.taskAPI.model.User;
 import com.ilyasben.taskAPI.repository.RoleRepository;
 import com.ilyasben.taskAPI.repository.UserRepository;
+import com.ilyasben.taskAPI.security.JWTGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,22 +31,26 @@ public class AuthController {
     private UserRepository userRepository;
     private RoleRepository roleRepository;
     private PasswordEncoder passwordEncoder;
+    private JWTGenerator tokenGenerator;
 
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
+    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository,
+                          RoleRepository roleRepository, PasswordEncoder passwordEncoder, JWTGenerator tokenGenerator) {
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
+        this.tokenGenerator = tokenGenerator;
     }
 
     @PostMapping("login")
-    public ResponseEntity<String> login(@RequestBody LoginDTO loginDTO) {
+    public ResponseEntity<AuthResponseDTO> login(@RequestBody LoginDTO loginDTO) {
         Authentication authentication = authenticationManager.authenticate(
                                             new UsernamePasswordAuthenticationToken(loginDTO.getUsername(),
                                                                                     loginDTO.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new ResponseEntity<>("User signed in successfully", HttpStatus.OK);
+        String token = tokenGenerator.generateToken(authentication);
+        return new ResponseEntity<>(new AuthResponseDTO(token), HttpStatus.OK);
     }
 
     @PostMapping("register")
