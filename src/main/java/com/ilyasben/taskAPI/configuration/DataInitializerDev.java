@@ -26,11 +26,11 @@ public class DataInitializerDev implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         // putting sample data in the db
-        User user = new User();
-        user.setPassword("should be hashed later on :)");
-        user.setUsername("Ilyas");
-        User savedUser = userRepository.save(user);
-        userService.createTodoForUser(savedUser.getId(), new CreateTodoRequest("sample task"));
+        //User user = new User();
+        //user.setPassword("should be hashed later on :)");
+        //user.setUsername("Ilyas");
+        //User savedUser = userRepository.save(user);
+        //userService.createTodoForUser(savedUser.getId(), new CreateTodoRequest("sample task"));
 
     }
 }

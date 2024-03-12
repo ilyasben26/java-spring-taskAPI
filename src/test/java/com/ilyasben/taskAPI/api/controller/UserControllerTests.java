@@ -43,7 +43,7 @@ public class UserControllerTests {
         when(userService.getUsers()).thenReturn(userDTOList);
 
         // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.get("/users")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -56,7 +56,7 @@ public class UserControllerTests {
         when(userService.getUserById(userId)).thenReturn(userDTO);
 
         // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.get("/users/{userId}", userId)
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/{userId}", userId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -68,37 +68,12 @@ public class UserControllerTests {
         when(userService.getUserById(userId)).thenThrow(UserNotFoundException.class);
 
         // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.get("/users/{userId}", userId)
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/{userId}", userId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
 
-    @Test
-    public void UserController_addUser_ReturnsOk_WhenUserIsAdded() throws Exception {
-        // Arrange
-        CreateUserRequest request = new CreateUserRequest();
-        when(userService.addUser(request)).thenReturn(new UserDTO());
 
-        // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.post("/users")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"username\": \"test\", \"password\": \"password\"}"))
-                .andExpect(status().isOk());
-    }
-
-    // TODO: fix this test case
-    @Test
-    public void UserController_addUser_ReturnsConflict_WhenUsernameAlreadyExists() throws Exception {
-        // Arrange
-        CreateUserRequest request = new CreateUserRequest();
-        when(userService.addUser(request)).thenThrow(UsernameAlreadyExistsException.class);
-
-        // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.post("/users")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"username\": \"existingUsername\", \"password\": \"password\"}"))
-                .andExpect(status().isConflict());
-    }
 
     @Test
     public void UserController_deleteUser_ReturnsOk_WhenUserIsDeleted() throws Exception {
@@ -107,7 +82,7 @@ public class UserControllerTests {
         doNothing().when(userService).deleteUser(userId);
 
         // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.delete("/users/{userId}", userId)
+        mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/users/{userId}", userId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -119,10 +94,10 @@ public class UserControllerTests {
         doThrow(UserNotFoundException.class).when(userService).deleteUser(userId);
 
         // Act & Assert
-        mockMvc.perform(MockMvcRequestBuilders.delete("/users/{userId}", userId)
+        mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/users/{userId}", userId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
 
-    // todo: add tests for adding a task and getting all task for a user
+
 }

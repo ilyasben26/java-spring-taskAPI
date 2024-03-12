@@ -9,6 +9,7 @@ import com.ilyasben.taskAPI.repository.RoleRepository;
 import com.ilyasben.taskAPI.repository.UserRepository;
 import com.ilyasben.taskAPI.security.JWTGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collections;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 public class AuthController {
 
     private AuthenticationManager authenticationManager;

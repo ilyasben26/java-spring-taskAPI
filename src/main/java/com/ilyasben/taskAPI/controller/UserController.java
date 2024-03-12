@@ -10,15 +10,19 @@ import com.ilyasben.taskAPI.model.User;
 import com.ilyasben.taskAPI.request.CreateTodoRequest;
 import com.ilyasben.taskAPI.request.CreateUserRequest;
 import com.ilyasben.taskAPI.service.UserService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/v1/users")
+@SecurityRequirement(name = "bearerAuth")
 public class UserController {
     // Dependency injections
     private final UserService userService;
@@ -28,7 +32,7 @@ public class UserController {
         this.userService = userService;
     }
 
-
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("")
     public ResponseEntity<?> getUsers() {
         try {

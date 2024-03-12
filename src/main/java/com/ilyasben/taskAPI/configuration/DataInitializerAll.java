@@ -4,10 +4,15 @@ import com.ilyasben.taskAPI.model.Role;
 import com.ilyasben.taskAPI.model.User;
 import com.ilyasben.taskAPI.repository.RoleRepository;
 import com.ilyasben.taskAPI.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 @Component
 public class DataInitializerAll implements CommandLineRunner {
@@ -21,23 +26,39 @@ public class DataInitializerAll implements CommandLineRunner {
     @Autowired
     UserRepository userRepository;
 
+    @Transactional
     @Override
     public void run(String... args) throws Exception {
-        // creating a USER role
-        Role roleUser = new Role();
-        roleUser.setName("USER");
-        roleRepository.save(roleUser);
+        Role userRole = roleRepository.findByName("USER")
+                .orElseGet(() -> {
+                    Role role = new Role();
+                    role.setName("USER");
+                    return roleRepository.save(role);
+                });
 
-        // creating an ADMIN role
-        Role roleAdmin = new Role();
-        roleAdmin.setName("ADMIN");
-        roleRepository.save(roleAdmin);
+        Role adminRole = roleRepository.findByName("ADMIN")
+                .orElseGet(() -> {
+                    Role role = new Role();
+                    role.setName("ADMIN");
+                    return roleRepository.save(role);
+                });
+
+
 
         // adding an admin
         User admin = new User();
-        admin.setUsername("Admin");
+        admin.setUsername("admin");
         admin.setPassword(passwordEncoder.encode("password")); // encoding the password
-
+        admin.setRoles(Collections.singletonList(adminRole));
         userRepository.save(admin);
+
+
+        // adding a normal user
+        User normalUser = new User();
+        normalUser.setUsername("ilyas");
+        normalUser.setPassword(passwordEncoder.encode("password")); // encoding the password
+        normalUser.setRoles(Collections.singletonList(userRole));
+        userRepository.save(normalUser);
+
     }
 }
