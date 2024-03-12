@@ -32,29 +32,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
-    @GetMapping("")
-    public ResponseEntity<?> getUsers() {
-        try {
-            return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
-        } catch (RuntimeException exception) {
-            return new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
 
-    }
-
-
-    @GetMapping("/{userId}")
-    public ResponseEntity<?> getUserById(@PathVariable Long userId) {
-        try {
-            return new ResponseEntity<>(userService.getUserById(userId), HttpStatus.OK);
-        } catch (UserNotFoundException userNotFoundException) {
-            return new ResponseEntity<>(userNotFoundException.getMessage(), HttpStatus.NOT_FOUND);
-        }
-
-    }
-
-
+    // todo: Add check to only delete the user if the admin or the user themselves says so
     @DeleteMapping("/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
         try {
