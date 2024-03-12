@@ -127,7 +127,6 @@ public class UserService {
         return modelMapper.map(todo, TodoDTO.class);
     }
 
-
     public UserDTO convertToDto(User user) {
         return modelMapper.map(user, UserDTO.class);
     }

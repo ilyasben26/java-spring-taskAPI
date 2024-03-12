@@ -1,15 +1,16 @@
 package com.ilyasben.taskAPI.controller;
 
+import com.ilyasben.taskAPI.dto.UserDTO;
 import com.ilyasben.taskAPI.exception.UserNotFoundException;
+import com.ilyasben.taskAPI.exception.UsernameAlreadyExistsException;
+import com.ilyasben.taskAPI.request.CreateUserRequest;
 import com.ilyasben.taskAPI.service.UserService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @PreAuthorize("hasAuthority('ADMIN')")
@@ -40,5 +41,17 @@ public class AdminController {
             return new ResponseEntity<>(userNotFoundException.getMessage(), HttpStatus.NOT_FOUND);
         }
 
+    }
+
+    @PatchMapping("/{userId}")
+    public ResponseEntity<?> updateUser(@PathVariable Long userId, @RequestBody CreateUserRequest createUserRequest) {
+        try {
+            UserDTO userDTO = userService.updateUser(userId, createUserRequest);
+            return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        } catch (UsernameAlreadyExistsException ex) {
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+        } catch (UserNotFoundException ex) {
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 }
