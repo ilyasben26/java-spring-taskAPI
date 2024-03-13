@@ -47,3 +47,7 @@ As an admin user I should be able to:
 - Toggle all the todos of other users.
 - Delete all the todos of other users.
 # Flow Diagrams
+## Login
+![appMapLoginSuccess](https://github.com/ilyasben26/java-spring-taskAPI/assets/73348981/f5d00bff-e786-4388-92e2-e653e3ea501c)
+## Add Todo
+![appMapAddTodo](https://github.com/ilyasben26/java-spring-taskAPI/assets/73348981/0f654380-266c-4382-aa23-39aa4acbe810)
