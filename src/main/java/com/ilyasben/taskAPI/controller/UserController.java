@@ -82,7 +82,6 @@ public class UserController {
         }
     }
 
-    // Refactored method to handle updating of todo for user
     @PutMapping("/{userId}/todo/{todoId}")
     public ResponseEntity<?> updateTodoForUser(@PathVariable Long userId, @PathVariable Long todoId, @RequestBody CreateTodoRequest createTodoRequest, Authentication authentication) {
         try {
@@ -99,44 +98,26 @@ public class UserController {
         }
     }
 
+    @DeleteMapping("/{userId}/todo/{todoId}")
+    public ResponseEntity<?> deleteTodoForUser(@PathVariable Long userId, @PathVariable Long todoId, Authentication authentication) {
+        try {
+            String reqUsername = userService.getUserById(userId).getUsername();
+
+            if (hasPermission(authentication, reqUsername)) {
+                userService.deleteTodoForUser(userId, todoId);
+                return new ResponseEntity<>("Todo deleted successfully for user", HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>("Unauthorized access to delete todo", HttpStatus.UNAUTHORIZED);
+            }
+        } catch (RuntimeException re) {
+            return new ResponseEntity<>(re.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
     // Utility
     private boolean hasPermission(Authentication authentication, String reqUsername) {
         String username = authentication.getName();
         return authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ADMIN")) ||
                 username.equals(reqUsername);
     }
-    /*
-
-    @PostMapping("/{userId}/todos")
-    public void addTodo(@PathVariable Long userId, @RequestBody AddTodoRequest todoRequest) {
-        // TODO: find out how to use a DTO instead of todoRequest
-        User user = userRepository.findById(userId).orElseThrow(() -> new NoSuchElementException());
-        Todo todo = new Todo();
-        todo.setContent(todoRequest.getContent());
-        user.getTodoList().add(todo);
-        todoRepository.save(todo);
-        userRepository.save(user);
-    }
-
-    @PostMapping("/todos/{todoId}")
-    public void toggleTodoCompleted(@PathVariable Long todoId) {
-        Todo todo = todoRepository.findById(todoId).orElseThrow(() -> new NoSuchElementException());
-        todo.setCompleted(!todo.isCompleted());
-        todoRepository.save(todo);
-    }
-
-    @DeleteMapping("/todos/{todoId}")
-    @Transactional
-    public void deleteTodo(@PathVariable Long todoId) {
-        Todo todo = todoRepository.findById(todoId).orElseThrow(() -> new NoSuchElementException());
-        todoRepository.delete(todo);
-    }
-
-    @DeleteMapping("/{userId}")
-    public void deleteUser(@PathVariable Long userId) {
-        User user = userRepository.findById(userId).orElseThrow(() -> new NoSuchElementException());
-        userRepository.delete(user);
-    }
-
-     */
 }

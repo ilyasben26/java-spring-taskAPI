@@ -3,7 +3,9 @@ package com.ilyasben.taskAPI.configuration;
 import com.ilyasben.taskAPI.model.Role;
 import com.ilyasben.taskAPI.model.User;
 import com.ilyasben.taskAPI.repository.RoleRepository;
+import com.ilyasben.taskAPI.repository.TodoRepository;
 import com.ilyasben.taskAPI.repository.UserRepository;
+import com.ilyasben.taskAPI.service.UserService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,12 +21,18 @@ public class DataInitializerAll implements CommandLineRunner {
 
     @Autowired
     RoleRepository roleRepository;
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private TodoRepository todoRepository;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    @Autowired
-    UserRepository userRepository;
 
     @Transactional
     @Override
@@ -43,8 +51,6 @@ public class DataInitializerAll implements CommandLineRunner {
                     return roleRepository.save(role);
                 });
 
-
-
         // adding an admin
         User admin = new User();
         admin.setUsername("admin");
@@ -59,6 +65,8 @@ public class DataInitializerAll implements CommandLineRunner {
         normalUser.setPassword(passwordEncoder.encode("password")); // encoding the password
         normalUser.setRoles(Collections.singletonList(userRole));
         userRepository.save(normalUser);
+
+
 
     }
 }

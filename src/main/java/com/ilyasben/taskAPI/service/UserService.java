@@ -127,6 +127,19 @@ public class UserService {
         return modelMapper.map(todo, TodoDTO.class);
     }
 
+    public boolean deleteTodoForUser(Long userId, Long todoId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        Todo todo = todoRepository.findById(todoId)
+                .orElseThrow(() -> new TodoNotFoundException("Todo not found"));
+
+        if (!Objects.equals(todo.getUser().getId(), user.getId())) throw  new TodoNotFoundException("Todo not found for user");
+
+        todoRepository.delete(todo);
+        return true;
+    }
+
     public UserDTO convertToDto(User user) {
         return modelMapper.map(user, UserDTO.class);
     }
