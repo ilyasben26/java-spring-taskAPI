@@ -10,6 +10,8 @@ import com.ilyasben.taskAPI.model.User;
 import com.ilyasben.taskAPI.request.CreateTodoRequest;
 import com.ilyasben.taskAPI.request.CreateUserRequest;
 import com.ilyasben.taskAPI.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
@@ -33,6 +35,9 @@ public class UserController {
         this.userService = userService;
     }
 
+    @Operation(
+            summary = "Get all todos for a user."
+    )
     @GetMapping("/{userId}/todos")
     public ResponseEntity<?> getAllTodosForUser(@PathVariable Long userId, Authentication authentication) {
         try {
@@ -50,6 +55,10 @@ public class UserController {
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+
+    @Operation(
+            summary = "Add a todo for a user."
+    )
     @PostMapping("/{userId}/todo")
     public ResponseEntity<?> createTodoForUser(@PathVariable Long userId, @RequestBody CreateTodoRequest createTodoRequest, Authentication authentication) {
         try {
@@ -66,6 +75,9 @@ public class UserController {
         }
     }
 
+    @Operation(
+            summary = "Toggle a todo for a user."
+    )
     @PutMapping("/{userId}/todo/{todoId}/toggle")
     public ResponseEntity<?> toggleTodoForUser(@PathVariable Long userId, @PathVariable Long todoId, Authentication authentication) {
         try {
@@ -82,6 +94,9 @@ public class UserController {
         }
     }
 
+    @Operation(
+            summary = "Modify a todo for a user."
+    )
     @PutMapping("/{userId}/todo/{todoId}")
     public ResponseEntity<?> updateTodoForUser(@PathVariable Long userId, @PathVariable Long todoId, @RequestBody CreateTodoRequest createTodoRequest, Authentication authentication) {
         try {
@@ -98,6 +113,9 @@ public class UserController {
         }
     }
 
+    @Operation(
+            summary = "Delete a todo for a user."
+    )
     @DeleteMapping("/{userId}/todo/{todoId}")
     public ResponseEntity<?> deleteTodoForUser(@PathVariable Long userId, @PathVariable Long todoId, Authentication authentication) {
         try {
