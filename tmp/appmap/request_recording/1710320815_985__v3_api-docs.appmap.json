@@ -1,0 +1,169 @@
+{
+  "events": [
+    {
+      "defined_class": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter",
+      "event": "call",
+      "id": 1,
+      "lineno": 26,
+      "method_id": "doFilterInternal",
+      "parameters": [
+        {
+          "class": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest",
+          "kind": "req",
+          "name": "request",
+          "object_id": 918867125,
+          "value": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@36c4ccb5"
+        },
+        {
+          "class": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse",
+          "kind": "req",
+          "name": "response",
+          "object_id": 756584405,
+          "value": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@2d188fd5"
+        },
+        {
+          "class": "org.springframework.security.web.FilterChainProxy$VirtualFilterChain",
+          "kind": "req",
+          "name": "filterChain",
+          "object_id": 2113519657,
+          "value": "org.springframework.security.web.FilterChainProxy$VirtualFilterChain@7df9c029"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter",
+        "object_id": 1750724866,
+        "value": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter@6859f102"
+      },
+      "static": false,
+      "thread_id": 52
+    },
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "sec-fetch-mode": "cors",
+          "referer": "http://localhost:8080/swagger-ui/index.html",
+          "sec-fetch-site": "same-origin",
+          "accept-language": "en-US,en;q=0.5",
+          "cookie": "JSESSIONID=69E0A69AFD64915805783007C8A0C8B1",
+          "host": "localhost:8080",
+          "connection": "keep-alive",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:123.0) Gecko/20100101 Firefox/123.0",
+          "accept": "application/json,*/*",
+          "sec-fetch-dest": "empty"
+        },
+        "normalized_path_info": "/v3/api-docs",
+        "path_info": "/v3/api-docs",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 2,
+      "thread_id": 52
+    },
+    {
+      "elapsed": 0.0641975,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "X-Frame-Options": "DENY",
+          "Keep-Alive": "timeout=60",
+          "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+          "X-Content-Type-Options": "nosniff",
+          "Connection": "keep-alive",
+          "Vary": "Origin",
+          "Pragma": "no-cache",
+          "Expires": "0",
+          "X-XSS-Protection": "0",
+          "Content-Length": "4637",
+          "Date": "Wed, 13 Mar 2024 09:06:55 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 3,
+      "parent_id": 2,
+      "thread_id": 52
+    },
+    {
+      "elapsed": 0.0642425,
+      "event": "return",
+      "id": 4,
+      "parent_id": 1,
+      "thread_id": 52
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /v3/api-docs (200) - 09:06:55.985",
+    "app": "taskAPI",
+    "language": {
+      "name": "java",
+      "version": "21.0.2+13-LTS-58",
+      "engine": "Java HotSpot(TM) 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
+      "branch": "AppMapTest",
+      "commit": "088c96d940013e8617069011bcd18bdb04ea1714"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "doFilterInternal",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+                        }
+                      ],
+                      "name": "JWTAuthenticationFilter",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "security",
+                  "type": "package"
+                }
+              ],
+              "name": "taskAPI",
+              "type": "package"
+            }
+          ],
+          "name": "ilyasben",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /v3/api-docs"
+        }
+      ]
+    }
+  ]
+}

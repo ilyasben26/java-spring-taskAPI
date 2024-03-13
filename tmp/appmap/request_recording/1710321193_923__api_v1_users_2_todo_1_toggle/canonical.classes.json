@@ -1,0 +1,5 @@
+[
+  "com/ilyasben/taskAPI/security/JWTAuthEntryPoint",
+  "com/ilyasben/taskAPI/security/JWTAuthenticationFilter",
+  "com/ilyasben/taskAPI/security/JWTGenerator"
+]

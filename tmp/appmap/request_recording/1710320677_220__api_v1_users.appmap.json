@@ -1,0 +1,243 @@
+{
+  "events": [
+    {
+      "defined_class": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter",
+      "event": "call",
+      "id": 1,
+      "lineno": 26,
+      "method_id": "doFilterInternal",
+      "parameters": [
+        {
+          "class": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest",
+          "kind": "req",
+          "name": "request",
+          "object_id": 855026343,
+          "value": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@32f6aaa7"
+        },
+        {
+          "class": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse",
+          "kind": "req",
+          "name": "response",
+          "object_id": 995563502,
+          "value": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@3b5717ee"
+        },
+        {
+          "class": "org.springframework.security.web.FilterChainProxy$VirtualFilterChain",
+          "kind": "req",
+          "name": "filterChain",
+          "object_id": 532182198,
+          "value": "org.springframework.security.web.FilterChainProxy$VirtualFilterChain@1fb874b6"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter",
+        "object_id": 1750724866,
+        "value": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter@6859f102"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.security.JWTGenerator",
+      "event": "call",
+      "id": 2,
+      "lineno": 47,
+      "method_id": "validateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 971249415,
+          "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcxMDMxOTI4NCwiZXhwIjoxNzEwMzE5MzU0fQ.eNSxjOF61-fwHkmaSSgsiKyS1vOZVc9wt3I0V_AwX0IXv60IvNgP4ajdhwhYXH8hmgjzr5FRP0U9KakKosvRFg"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/security/JWTGenerator.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.security.JWTGenerator",
+        "object_id": 1213792973,
+        "value": "com.ilyasben.taskAPI.security.JWTGenerator@485902cd"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0373083,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "org.springframework.security.authentication.AuthenticationCredentialsNotFoundException",
+          "lineno": 53,
+          "message": "JWT was expired or incorrect",
+          "object_id": 845594370,
+          "path": "JWTGenerator.java"
+        },
+        {
+          "class": "io.jsonwebtoken.ExpiredJwtException",
+          "lineno": 53,
+          "message": "JWT expired at 2024-03-13T08:42:34Z. Current time: 2024-03-13T09:04:37Z, a difference of 1323636 milliseconds.  Allowed clock skew: 0 milliseconds.",
+          "object_id": 879897200,
+          "path": "JWTGenerator.java"
+        }
+      ],
+      "id": 3,
+      "parent_id": 2,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0378845,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "org.springframework.security.authentication.AuthenticationCredentialsNotFoundException",
+          "lineno": 53,
+          "message": "JWT was expired or incorrect",
+          "object_id": 845594370,
+          "path": "JWTGenerator.java"
+        },
+        {
+          "class": "io.jsonwebtoken.ExpiredJwtException",
+          "lineno": 53,
+          "message": "JWT expired at 2024-03-13T08:42:34Z. Current time: 2024-03-13T09:04:37Z, a difference of 1323636 milliseconds.  Allowed clock skew: 0 milliseconds.",
+          "object_id": 879897200,
+          "path": "JWTGenerator.java"
+        }
+      ],
+      "id": 4,
+      "parent_id": 1,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.security.JWTAuthEntryPoint",
+      "event": "call",
+      "id": 5,
+      "lineno": 17,
+      "method_id": "commence",
+      "parameters": [
+        {
+          "class": "org.springframework.security.web.servletapi.HttpServlet3RequestFactory$Servlet3SecurityContextHolderAwareRequestWrapper",
+          "kind": "req",
+          "name": "request",
+          "object_id": 1940879740,
+          "value": "SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@3d341e74]]"
+        },
+        {
+          "class": "org.springframework.security.web.firewall.FirewalledResponse",
+          "kind": "req",
+          "name": "response",
+          "object_id": 2105064063,
+          "value": "org.springframework.security.web.firewall.FirewalledResponse@7d78ba7f"
+        },
+        {
+          "class": "org.springframework.security.authentication.InsufficientAuthenticationException",
+          "kind": "req",
+          "name": "authException",
+          "object_id": 420558469,
+          "value": "org.springframework.security.authentication.InsufficientAuthenticationException: Full authentication is required to access this resource"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthEntryPoint.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.security.JWTAuthEntryPoint",
+        "object_id": 753877793,
+        "value": "com.ilyasben.taskAPI.security.JWTAuthEntryPoint@2cef4321"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0000145,
+      "event": "return",
+      "id": 6,
+      "parent_id": 5,
+      "thread_id": 48
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /api/v1/users (UNKNOWN) - 09:04:37.220",
+    "app": "taskAPI",
+    "language": {
+      "name": "java",
+      "version": "21.0.2+13-LTS-58",
+      "engine": "Java HotSpot(TM) 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
+      "branch": "AppMapTest",
+      "commit": "088c96d940013e8617069011bcd18bdb04ea1714"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "commence",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthEntryPoint.java:17"
+                        }
+                      ],
+                      "name": "JWTAuthEntryPoint",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "validateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/security/JWTGenerator.java:47"
+                        }
+                      ],
+                      "name": "JWTGenerator",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "doFilterInternal",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+                        }
+                      ],
+                      "name": "JWTAuthenticationFilter",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "security",
+                  "type": "package"
+                }
+              ],
+              "name": "taskAPI",
+              "type": "package"
+            }
+          ],
+          "name": "ilyasben",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    }
+  ]
+}

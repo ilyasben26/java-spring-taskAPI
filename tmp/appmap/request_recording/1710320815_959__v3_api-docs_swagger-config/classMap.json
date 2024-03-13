@@ -1,0 +1,48 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "doFilterInternal",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+                      }
+                    ],
+                    "name": "JWTAuthenticationFilter",
+                    "type": "class"
+                  }
+                ],
+                "name": "security",
+                "type": "package"
+              }
+            ],
+            "name": "taskAPI",
+            "type": "package"
+          }
+        ],
+        "name": "ilyasben",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /v3/api-docs/swagger-config"
+      }
+    ]
+  }
+]

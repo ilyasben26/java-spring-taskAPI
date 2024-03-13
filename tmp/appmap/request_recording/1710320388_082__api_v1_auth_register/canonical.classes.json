@@ -1,0 +1,5 @@
+[
+  "com/ilyasben/taskAPI/controller/AuthController",
+  "com/ilyasben/taskAPI/repository/RoleRepository",
+  "com/ilyasben/taskAPI/repository/UserRepository"
+]

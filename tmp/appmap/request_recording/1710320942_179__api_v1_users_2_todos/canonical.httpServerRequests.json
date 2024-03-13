@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /api/v1/users/{userId}/todos",
+    "parameters": "()",
+    "status": 200
+  }
+]

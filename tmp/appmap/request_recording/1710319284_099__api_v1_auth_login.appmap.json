@@ -1,0 +1,416 @@
+{
+  "events": [
+    {
+      "defined_class": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter",
+      "event": "call",
+      "id": 1,
+      "lineno": 26,
+      "method_id": "doFilterInternal",
+      "parameters": [
+        {
+          "class": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest",
+          "kind": "req",
+          "name": "request",
+          "object_id": 943537299,
+          "value": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@383d3c93"
+        },
+        {
+          "class": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse",
+          "kind": "req",
+          "name": "response",
+          "object_id": 1006813004,
+          "value": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@3c02bf4c"
+        },
+        {
+          "class": "org.springframework.security.web.FilterChainProxy$VirtualFilterChain",
+          "kind": "req",
+          "name": "filterChain",
+          "object_id": 2030057128,
+          "value": "org.springframework.security.web.FilterChainProxy$VirtualFilterChain@790036a8"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter",
+        "object_id": 1750724866,
+        "value": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter@6859f102"
+      },
+      "static": false,
+      "thread_id": 50
+    },
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "55",
+          "postman-token": "0d8c745a-45d8-44be-8827-e7ea6cce641b",
+          "host": "localhost:8080",
+          "content-type": "application/json",
+          "connection": "keep-alive",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.36.3",
+          "accept": "*/*"
+        },
+        "normalized_path_info": "/api/v1/auth/login",
+        "path_info": "/api/v1/auth/login",
+        "protocol": "HTTP/1.1",
+        "request_method": "POST"
+      },
+      "id": 2,
+      "thread_id": 50
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.controller.AuthController",
+      "event": "call",
+      "id": 3,
+      "lineno": 49,
+      "method_id": "login",
+      "parameters": [
+        {
+          "class": "com.ilyasben.taskAPI.dto.LoginDTO",
+          "kind": "req",
+          "name": "loginDTO",
+          "object_id": 1682336060,
+          "value": "LoginDTO(username=admin, password=password)"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.controller.AuthController",
+        "object_id": 339894870,
+        "value": "com.ilyasben.taskAPI.controller.AuthController@14426256"
+      },
+      "static": false,
+      "thread_id": 50
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.security.CustomUserDetailsService",
+      "event": "call",
+      "id": 4,
+      "lineno": 32,
+      "method_id": "loadUserByUsername",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 531200958,
+          "value": "admin"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/security/CustomUserDetailsService.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.security.CustomUserDetailsService",
+        "object_id": 885977013,
+        "value": "com.ilyasben.taskAPI.security.CustomUserDetailsService@34ceefb5"
+      },
+      "static": false,
+      "thread_id": 50
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.repository.UserRepository",
+      "event": "call",
+      "id": 5,
+      "lineno": -1,
+      "method_id": "findByUsername",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 531200958,
+          "value": "admin"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/repository/UserRepository.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy194",
+        "object_id": 1571747369,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@c361ea8"
+      },
+      "static": false,
+      "thread_id": 50
+    },
+    {
+      "event": "call",
+      "id": 6,
+      "sql_query": {
+        "database_type": "H2",
+        "sql": "select u1_0.id,u1_0.created_on,u1_0.password,u1_0.updated_on,u1_0.username from users u1_0 where u1_0.username=?"
+      },
+      "thread_id": 50
+    },
+    {
+      "elapsed": 0.0001369,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "thread_id": 50
+    },
+    {
+      "event": "call",
+      "id": 8,
+      "sql_query": {
+        "database_type": "H2",
+        "sql": "select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join roles r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?"
+      },
+      "thread_id": 50
+    },
+    {
+      "elapsed": 0.0001838,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "thread_id": 50
+    },
+    {
+      "elapsed": 0.0036287,
+      "event": "return",
+      "id": 10,
+      "parent_id": 5,
+      "return_value": {
+        "class": "java.util.Optional",
+        "object_id": 983930306,
+        "value": "Optional[User(id=1, username=admin, password=$2a$10$ngUtLjbisVdhysmKUiYYquE/CMiZ0LTiTVmmTZkkOF46/5a9Y9lAC, roles=[com.ilyasben.taskAPI.model.Role@4e7ba2cc], createdOn=2024-03-13T08:40:19.215140, updatedOn=2024-03-13T08:40:19.215193)]"
+      },
+      "thread_id": 50
+    },
+    {
+      "elapsed": 0.0041127,
+      "event": "return",
+      "id": 11,
+      "parent_id": 4,
+      "return_value": {
+        "class": "org.springframework.security.core.userdetails.User",
+        "object_id": 115883224,
+        "value": "org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ADMIN]]"
+      },
+      "thread_id": 50
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.security.JWTGenerator",
+      "event": "call",
+      "id": 12,
+      "lineno": 20,
+      "method_id": "generateToken",
+      "parameters": [
+        {
+          "class": "org.springframework.security.authentication.UsernamePasswordAuthenticationToken",
+          "kind": "req",
+          "name": "authentication",
+          "object_id": 148862281,
+          "value": "UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ADMIN]]"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/security/JWTGenerator.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.security.JWTGenerator",
+        "object_id": 1213792973,
+        "value": "com.ilyasben.taskAPI.security.JWTGenerator@485902cd"
+      },
+      "static": false,
+      "thread_id": 50
+    },
+    {
+      "elapsed": 0.0026379,
+      "event": "return",
+      "id": 13,
+      "parent_id": 12,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 804986186,
+        "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcxMDMxOTI4NCwiZXhwIjoxNzEwMzE5MzU0fQ.eNSxjOF61-fwHkmaSSgsiKyS1vOZVc9wt3I0V_AwX0IXv60IvNgP4ajdhwhYXH8hmgjzr5FRP0U9KakKosvRFg"
+      },
+      "thread_id": 50
+    },
+    {
+      "elapsed": 0.023258,
+      "event": "return",
+      "id": 14,
+      "parent_id": 3,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 1826171254,
+        "value": "<200 OK OK,AuthResponseDTO(accessToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcxMDMxOTI4NCwiZXhwIjoxNzEwMzE5MzU0fQ.eNSxjOF61-fwHkmaSSgsiKyS1vOZVc9wt3I0V_AwX0IXv60IvNgP4ajdhwhYXH8hmgjzr5FRP0U9KakKosvRFg, tokenType=Bearer ),[]>"
+      },
+      "thread_id": 50
+    },
+    {
+      "elapsed": 0.0430175,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "X-Frame-Options": "DENY",
+          "Transfer-Encoding": "chunked",
+          "Keep-Alive": "timeout=60",
+          "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+          "X-Content-Type-Options": "nosniff",
+          "Connection": "keep-alive",
+          "Vary": "Origin",
+          "Pragma": "no-cache",
+          "Expires": "0",
+          "X-XSS-Protection": "0",
+          "Date": "Wed, 13 Mar 2024 08:41:24 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 15,
+      "parent_id": 2,
+      "thread_id": 50
+    },
+    {
+      "elapsed": 0.0451693,
+      "event": "return",
+      "id": 16,
+      "parent_id": 1,
+      "thread_id": 50
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "POST /api/v1/auth/login (200) - 08:41:24.099",
+    "app": "taskAPI",
+    "language": {
+      "name": "java",
+      "version": "21.0.2+13-LTS-58",
+      "engine": "Java HotSpot(TM) 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
+      "branch": "AppMapTest",
+      "commit": "088c96d940013e8617069011bcd18bdb04ea1714"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "loadUserByUsername",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/security/CustomUserDetailsService.java:32"
+                        }
+                      ],
+                      "name": "CustomUserDetailsService",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "generateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/security/JWTGenerator.java:20"
+                        }
+                      ],
+                      "name": "JWTGenerator",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "doFilterInternal",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+                        }
+                      ],
+                      "name": "JWTAuthenticationFilter",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "security",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "findByUsername",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/repository/UserRepository.java:-1"
+                        }
+                      ],
+                      "name": "UserRepository",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "repository",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "login",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java:49"
+                        }
+                      ],
+                      "name": "AuthController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                }
+              ],
+              "name": "taskAPI",
+              "type": "package"
+            }
+          ],
+          "name": "ilyasben",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /api/v1/auth/login"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select u1_0.id,u1_0.created_on,u1_0.password,u1_0.updated_on,u1_0.username from users u1_0 where u1_0.username=?"
+        },
+        {
+          "type": "query",
+          "name": "select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join roles r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?"
+        }
+      ]
+    }
+  ]
+}

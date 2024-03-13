@@ -1,0 +1,4 @@
+[
+  "select r1_0.user_id,r1_1.id,r1_1.name from user_roles r1_0 join roles r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?",
+  "select u1_0.id,u1_0.created_on,u1_0.password,u1_0.updated_on,u1_0.username from users u1_0"
+]

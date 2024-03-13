@@ -1,0 +1,6 @@
+[
+  "com/ilyasben/taskAPI/controller/AuthController",
+  "com/ilyasben/taskAPI/repository/UserRepository",
+  "com/ilyasben/taskAPI/security/CustomUserDetailsService",
+  "com/ilyasben/taskAPI/security/JWTGenerator"
+]

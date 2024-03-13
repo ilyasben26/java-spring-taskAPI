@@ -1,0 +1,5 @@
+[
+  "com/ilyasben/taskAPI/controller/UserController",
+  "com/ilyasben/taskAPI/repository/TodoRepository",
+  "com/ilyasben/taskAPI/service/UserService"
+]

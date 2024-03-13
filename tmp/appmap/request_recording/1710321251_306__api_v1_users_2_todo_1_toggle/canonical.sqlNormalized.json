@@ -1,0 +1,5 @@
+[
+  "select t1_0.id,t1_0.completed,t1_0.content,t1_0.created_on,t1_0.updated_on,t1_0.user_id from todo t1_0 where t1_0.id=?",
+  "select u1_0.id,u1_0.created_on,u1_0.password,u1_0.updated_on,u1_0.username,r1_0.user_id,r1_1.id,r1_1.name from users u1_0 left join user_roles r1_0 on u1_0.id=r1_0.user_id left join roles r1_1 on r1_1.id=r1_0.role_id where u1_0.id=?",
+  "update todo set completed=?,content=?,created_on=?,updated_on=?,user_id=? where id=?"
+]

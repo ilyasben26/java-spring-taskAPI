@@ -1,0 +1,6 @@
+[
+  "insert into user_roles (user_id,role_id) values (?,?)",
+  "insert into users (created_on,password,updated_on,username,id) values (?,?,?,?,?)",
+  "select r1_0.id,r1_0.name from roles r1_0 where r1_0.name=?",
+  "select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only"
+]

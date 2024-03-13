@@ -1,0 +1,40 @@
+[
+  {
+    "class": "io.jsonwebtoken.ExpiredJwtException",
+    "message": "JWT expired at 2024-03-13T08:42:34Z. Current time: 2024-03-13T09:04:37Z, a difference of 1323636 milliseconds.  Allowed clock skew: 0 milliseconds.",
+    "stack": [
+      "JWTGenerator.java:53",
+      "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+    ],
+    "location": "JWTGenerator.java:53"
+  },
+  {
+    "class": "io.jsonwebtoken.ExpiredJwtException",
+    "message": "JWT expired at 2024-03-13T08:42:34Z. Current time: 2024-03-13T09:04:37Z, a difference of 1323636 milliseconds.  Allowed clock skew: 0 milliseconds.",
+    "stack": [
+      "JWTGenerator.java:53",
+      "src/main/java/com/ilyasben/taskAPI/security/JWTGenerator.java:47",
+      "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+    ],
+    "location": "JWTGenerator.java:53"
+  },
+  {
+    "class": "org.springframework.security.authentication.AuthenticationCredentialsNotFoundException",
+    "message": "JWT was expired or incorrect",
+    "stack": [
+      "JWTGenerator.java:53",
+      "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+    ],
+    "location": "JWTGenerator.java:53"
+  },
+  {
+    "class": "org.springframework.security.authentication.AuthenticationCredentialsNotFoundException",
+    "message": "JWT was expired or incorrect",
+    "stack": [
+      "JWTGenerator.java:53",
+      "src/main/java/com/ilyasben/taskAPI/security/JWTGenerator.java:47",
+      "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+    ],
+    "location": "JWTGenerator.java:53"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "commence",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthEntryPoint.java:17"
+                      }
+                    ],
+                    "name": "JWTAuthEntryPoint",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "validateToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/com/ilyasben/taskAPI/security/JWTGenerator.java:47"
+                      }
+                    ],
+                    "name": "JWTGenerator",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "doFilterInternal",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+                      }
+                    ],
+                    "name": "JWTAuthenticationFilter",
+                    "type": "class"
+                  }
+                ],
+                "name": "security",
+                "type": "package"
+              }
+            ],
+            "name": "taskAPI",
+            "type": "package"
+          }
+        ],
+        "name": "ilyasben",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  }
+]

@@ -1,0 +1,408 @@
+{
+  "events": [
+    {
+      "defined_class": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter",
+      "event": "call",
+      "id": 1,
+      "lineno": 26,
+      "method_id": "doFilterInternal",
+      "parameters": [
+        {
+          "class": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest",
+          "kind": "req",
+          "name": "request",
+          "object_id": 1055679714,
+          "value": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@3eec64e2"
+        },
+        {
+          "class": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse",
+          "kind": "req",
+          "name": "response",
+          "object_id": 986965991,
+          "value": "org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterResponse@3ad3e7e7"
+        },
+        {
+          "class": "org.springframework.security.web.FilterChainProxy$VirtualFilterChain",
+          "kind": "req",
+          "name": "filterChain",
+          "object_id": 2144431833,
+          "value": "org.springframework.security.web.FilterChainProxy$VirtualFilterChain@7fd16ed9"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter",
+        "object_id": 1750724866,
+        "value": "com.ilyasben.taskAPI.security.JWTAuthenticationFilter@6859f102"
+      },
+      "static": false,
+      "thread_id": 54
+    },
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "60",
+          "postman-token": "d83968b7-b30e-4a4c-b8f4-fa67b6e4f1a8",
+          "host": "localhost:8080",
+          "content-type": "application/json",
+          "connection": "keep-alive",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.36.3",
+          "accept": "*/*"
+        },
+        "normalized_path_info": "/api/v1/auth/register",
+        "path_info": "/api/v1/auth/register",
+        "protocol": "HTTP/1.1",
+        "request_method": "POST"
+      },
+      "id": 2,
+      "thread_id": 54
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.controller.AuthController",
+      "event": "call",
+      "id": 3,
+      "lineno": 59,
+      "method_id": "register",
+      "parameters": [
+        {
+          "class": "com.ilyasben.taskAPI.dto.RegisterDTO",
+          "kind": "req",
+          "name": "registerDTO",
+          "object_id": 714782567,
+          "value": "RegisterDTO(username=newuser, password=password123)"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.controller.AuthController",
+        "object_id": 339894870,
+        "value": "com.ilyasben.taskAPI.controller.AuthController@14426256"
+      },
+      "static": false,
+      "thread_id": 54
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.repository.UserRepository",
+      "event": "call",
+      "id": 4,
+      "lineno": -1,
+      "method_id": "existsByUsername",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 968318805,
+          "value": "newuser"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/repository/UserRepository.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy194",
+        "object_id": 1571747369,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@c361ea8"
+      },
+      "static": false,
+      "thread_id": 54
+    },
+    {
+      "event": "call",
+      "id": 5,
+      "sql_query": {
+        "database_type": "H2",
+        "sql": "select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only"
+      },
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.000459,
+      "event": "return",
+      "id": 6,
+      "parent_id": 5,
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.0051907,
+      "event": "return",
+      "id": 7,
+      "parent_id": 4,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 182799679,
+        "value": "false"
+      },
+      "thread_id": 54
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.repository.RoleRepository",
+      "event": "call",
+      "id": 8,
+      "lineno": -1,
+      "method_id": "findByName",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1227054732,
+          "value": "USER"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/repository/RoleRepository.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy199",
+        "object_id": 1098385231,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@7eb5f560"
+      },
+      "static": false,
+      "thread_id": 54
+    },
+    {
+      "event": "call",
+      "id": 9,
+      "sql_query": {
+        "database_type": "H2",
+        "sql": "select r1_0.id,r1_0.name from roles r1_0 where r1_0.name=?"
+      },
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.0000794,
+      "event": "return",
+      "id": 10,
+      "parent_id": 9,
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.0006393,
+      "event": "return",
+      "id": 11,
+      "parent_id": 8,
+      "return_value": {
+        "class": "java.util.Optional",
+        "object_id": 1800281389,
+        "value": "Optional[com.ilyasben.taskAPI.model.Role@3a01f1f8]"
+      },
+      "thread_id": 54
+    },
+    {
+      "event": "call",
+      "id": 12,
+      "sql_query": {
+        "database_type": "H2",
+        "sql": "insert into users (created_on,password,updated_on,username,id) values (?,?,?,?,?)"
+      },
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.0001004,
+      "event": "return",
+      "id": 13,
+      "parent_id": 12,
+      "thread_id": 54
+    },
+    {
+      "event": "call",
+      "id": 14,
+      "sql_query": {
+        "database_type": "H2",
+        "sql": "insert into user_roles (user_id,role_id) values (?,?)"
+      },
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.0000452,
+      "event": "return",
+      "id": 15,
+      "parent_id": 14,
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.0174785,
+      "event": "return",
+      "id": 16,
+      "parent_id": 3,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 1395006095,
+        "value": "<200 OK OK,User registered successfully,[]>"
+      },
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.0354219,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "X-Frame-Options": "DENY",
+          "Keep-Alive": "timeout=60",
+          "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+          "X-Content-Type-Options": "nosniff",
+          "Connection": "keep-alive",
+          "Vary": "Origin",
+          "Pragma": "no-cache",
+          "Expires": "0",
+          "X-XSS-Protection": "0",
+          "Content-Length": "28",
+          "Date": "Wed, 13 Mar 2024 08:59:48 GMT",
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 200
+      },
+      "id": 17,
+      "parent_id": 2,
+      "thread_id": 54
+    },
+    {
+      "elapsed": 0.035994,
+      "event": "return",
+      "id": 18,
+      "parent_id": 1,
+      "thread_id": 54
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "POST /api/v1/auth/register (200) - 08:59:48.082",
+    "app": "taskAPI",
+    "language": {
+      "name": "java",
+      "version": "21.0.2+13-LTS-58",
+      "engine": "Java HotSpot(TM) 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
+      "branch": "AppMapTest",
+      "commit": "088c96d940013e8617069011bcd18bdb04ea1714"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "register",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java:59"
+                        }
+                      ],
+                      "name": "AuthController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "existsByUsername",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/repository/UserRepository.java:-1"
+                        }
+                      ],
+                      "name": "UserRepository",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "findByName",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/repository/RoleRepository.java:-1"
+                        }
+                      ],
+                      "name": "RoleRepository",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "repository",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "doFilterInternal",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/security/JWTAuthenticationFilter.java:26"
+                        }
+                      ],
+                      "name": "JWTAuthenticationFilter",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "security",
+                  "type": "package"
+                }
+              ],
+              "name": "taskAPI",
+              "type": "package"
+            }
+          ],
+          "name": "ilyasben",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /api/v1/auth/register"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only"
+        },
+        {
+          "type": "query",
+          "name": "select r1_0.id,r1_0.name from roles r1_0 where r1_0.name=?"
+        },
+        {
+          "type": "query",
+          "name": "insert into users (created_on,password,updated_on,username,id) values (?,?,?,?,?)"
+        },
+        {
+          "type": "query",
+          "name": "insert into user_roles (user_id,role_id) values (?,?)"
+        }
+      ]
+    }
+  ]
+}

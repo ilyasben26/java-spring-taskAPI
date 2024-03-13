@@ -1,0 +1,7 @@
+[
+  {
+    "route": "PUT /api/v1/users/{userId}/todo/{todoId}/toggle",
+    "parameters": "()",
+    "status": 200
+  }
+]
