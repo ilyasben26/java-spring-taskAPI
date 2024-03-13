@@ -1,0 +1,691 @@
+{
+  "events": [
+    {
+      "defined_class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
+      "event": "call",
+      "id": 1,
+      "lineno": 116,
+      "method_id": "updateUser_Successfully",
+      "path": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
+        "object_id": 1399517496,
+        "value": "com.ilyasben.taskAPI.api.service.UserServiceTests@536af138"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User",
+      "event": "call",
+      "id": 2,
+      "lineno": 20,
+      "method_id": "builder",
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "static": true,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000185,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1319962561,
+        "value": "User.UserBuilder(id=null, username=null, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 4,
+      "lineno": 20,
+      "method_id": "id",
+      "parameters": [
+        {
+          "class": "java.lang.Long",
+          "kind": "req",
+          "name": "id",
+          "object_id": 2125486231,
+          "value": "1"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1319962561,
+        "value": "User.UserBuilder(id=1, username=null, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000786,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1319962561,
+        "value": "User.UserBuilder(id=1, username=null, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 6,
+      "lineno": 20,
+      "method_id": "username",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 867222659,
+          "value": "oldUsername"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1319962561,
+        "value": "User.UserBuilder(id=1, username=oldUsername, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000058,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1319962561,
+        "value": "User.UserBuilder(id=1, username=oldUsername, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 8,
+      "lineno": 20,
+      "method_id": "password",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "password",
+          "object_id": 1303733819,
+          "value": "oldPassword"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1319962561,
+        "value": "User.UserBuilder(id=1, username=oldUsername, password=oldPassword, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.000005,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1319962561,
+        "value": "User.UserBuilder(id=1, username=oldUsername, password=oldPassword, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 10,
+      "lineno": 20,
+      "method_id": "build",
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1319962561,
+        "value": "User.UserBuilder(id=1, username=oldUsername, password=oldPassword, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000055,
+      "event": "return",
+      "id": 11,
+      "parent_id": 10,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User",
+        "object_id": 2121646738,
+        "value": "User(id=1, username=oldUsername, password=oldPassword, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User",
+      "event": "call",
+      "id": 12,
+      "lineno": 20,
+      "method_id": "builder",
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "static": true,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000123,
+      "event": "return",
+      "id": 13,
+      "parent_id": 12,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 926465402,
+        "value": "User.UserBuilder(id=null, username=null, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 14,
+      "lineno": 20,
+      "method_id": "id",
+      "parameters": [
+        {
+          "class": "java.lang.Long",
+          "kind": "req",
+          "name": "id",
+          "object_id": 2125486231,
+          "value": "1"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 926465402,
+        "value": "User.UserBuilder(id=1, username=null, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000129,
+      "event": "return",
+      "id": 15,
+      "parent_id": 14,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 926465402,
+        "value": "User.UserBuilder(id=1, username=null, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 16,
+      "lineno": 20,
+      "method_id": "username",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 43643842,
+          "value": "newUsername"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 926465402,
+        "value": "User.UserBuilder(id=1, username=newUsername, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000051,
+      "event": "return",
+      "id": 17,
+      "parent_id": 16,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 926465402,
+        "value": "User.UserBuilder(id=1, username=newUsername, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 18,
+      "lineno": 20,
+      "method_id": "password",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "password",
+          "object_id": 1694222612,
+          "value": "newPassword"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 926465402,
+        "value": "User.UserBuilder(id=1, username=newUsername, password=newPassword, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000048,
+      "event": "return",
+      "id": 19,
+      "parent_id": 18,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 926465402,
+        "value": "User.UserBuilder(id=1, username=newUsername, password=newPassword, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 20,
+      "lineno": 20,
+      "method_id": "build",
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 926465402,
+        "value": "User.UserBuilder(id=1, username=newUsername, password=newPassword, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000047,
+      "event": "return",
+      "id": 21,
+      "parent_id": 20,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User",
+        "object_id": 877323851,
+        "value": "User(id=1, username=newUsername, password=newPassword, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.dto.UserDTO",
+      "event": "call",
+      "id": 22,
+      "lineno": 14,
+      "method_id": "builder",
+      "path": "src/main/java/com/ilyasben/taskAPI/dto/UserDTO.java",
+      "static": true,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000077,
+      "event": "return",
+      "id": 23,
+      "parent_id": 22,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+        "object_id": 1181441749,
+        "value": "UserDTO.UserDTOBuilder(id=null, username=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+      "event": "call",
+      "id": 24,
+      "lineno": 14,
+      "method_id": "id",
+      "parameters": [
+        {
+          "class": "java.lang.Long",
+          "kind": "req",
+          "name": "id",
+          "object_id": 2125486231,
+          "value": "1"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/dto/UserDTO.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+        "object_id": 1181441749,
+        "value": "UserDTO.UserDTOBuilder(id=1, username=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000382,
+      "event": "return",
+      "id": 25,
+      "parent_id": 24,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+        "object_id": 1181441749,
+        "value": "UserDTO.UserDTOBuilder(id=1, username=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+      "event": "call",
+      "id": 26,
+      "lineno": 14,
+      "method_id": "username",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 43643842,
+          "value": "newUsername"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/dto/UserDTO.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+        "object_id": 1181441749,
+        "value": "UserDTO.UserDTOBuilder(id=1, username=newUsername, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.000005,
+      "event": "return",
+      "id": 27,
+      "parent_id": 26,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+        "object_id": 1181441749,
+        "value": "UserDTO.UserDTOBuilder(id=1, username=newUsername, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+      "event": "call",
+      "id": 28,
+      "lineno": 14,
+      "method_id": "build",
+      "path": "src/main/java/com/ilyasben/taskAPI/dto/UserDTO.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.dto.UserDTO$UserDTOBuilder",
+        "object_id": 1181441749,
+        "value": "UserDTO.UserDTOBuilder(id=1, username=newUsername, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000047,
+      "event": "return",
+      "id": 29,
+      "parent_id": 28,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.dto.UserDTO",
+        "object_id": 1965312210,
+        "value": "UserDTO(id=1, username=newUsername, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.service.UserService",
+      "event": "call",
+      "id": 30,
+      "lineno": 57,
+      "method_id": "updateUser",
+      "parameters": [
+        {
+          "class": "java.lang.Long",
+          "kind": "req",
+          "name": "userId",
+          "object_id": 2125486231,
+          "value": "1"
+        },
+        {
+          "class": "com.ilyasben.taskAPI.request.CreateUserRequest",
+          "kind": "req",
+          "name": "updatedUserInfo",
+          "object_id": 1579356966,
+          "value": "CreateUserRequest(username=newUsername, password=newPassword)"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/service/UserService.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.service.UserService",
+        "object_id": 1907989702,
+        "value": "com.ilyasben.taskAPI.service.UserService@71b99cc6"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000514,
+      "event": "return",
+      "id": 31,
+      "parent_id": 30,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.dto.UserDTO",
+        "object_id": 1965312210,
+        "value": "UserDTO(id=1, username=newUsername, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0005074,
+      "event": "return",
+      "id": 32,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "User services update user _ successfully",
+    "app": "taskAPI",
+    "language": {
+      "name": "java",
+      "version": "21.0.2+13-LTS-58",
+      "engine": "Java HotSpot(TM) 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
+      "method_id": "updateUser_Successfully"
+    },
+    "git": {
+      "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
+      "branch": "AppMapTest",
+      "commit": "eb37141b5fba4dacc83dfa91269a480f7ceea6b4"
+    },
+    "source_location": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java:116",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "build",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        },
+                        {
+                          "name": "id",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        },
+                        {
+                          "name": "username",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        },
+                        {
+                          "name": "password",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        }
+                      ],
+                      "name": "User$UserBuilder",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "builder",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        }
+                      ],
+                      "name": "User",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "model",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "builder",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/main/java/com/ilyasben/taskAPI/dto/UserDTO.java:14"
+                        }
+                      ],
+                      "name": "UserDTO",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "username",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/dto/UserDTO.java:14"
+                        },
+                        {
+                          "name": "build",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/dto/UserDTO.java:14"
+                        },
+                        {
+                          "name": "id",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/dto/UserDTO.java:14"
+                        }
+                      ],
+                      "name": "UserDTO$UserDTOBuilder",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "dto",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "updateUser_Successfully",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java:116"
+                            }
+                          ],
+                          "name": "UserServiceTests",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "service",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "api",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "updateUser",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/service/UserService.java:57"
+                        }
+                      ],
+                      "name": "UserService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                }
+              ],
+              "name": "taskAPI",
+              "type": "package"
+            }
+          ],
+          "name": "ilyasben",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+[
+  "insert into users (created_on,password,updated_on,username,id) values (?,?,?,?,?)",
+  "select next value for users_seq",
+  "select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only"
+]

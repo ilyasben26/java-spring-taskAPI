@@ -1,0 +1,12 @@
+[
+  {
+    "class": "com.ilyasben.taskAPI.exception.UserNotFoundException",
+    "message": "User not found",
+    "stack": [
+      "UserService.java:62",
+      "src/main/java/com/ilyasben/taskAPI/service/UserService.java:57",
+      "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java:173"
+    ],
+    "location": "UserService.java:62"
+  }
+]

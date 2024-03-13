@@ -1,0 +1,6 @@
+[
+  "com/ilyasben/taskAPI/api/service",
+  "com/ilyasben/taskAPI/dto",
+  "com/ilyasben/taskAPI/model",
+  "com/ilyasben/taskAPI/service"
+]

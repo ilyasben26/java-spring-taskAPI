@@ -1,0 +1,5 @@
+[
+  "com/ilyasben/taskAPI/api/repository",
+  "com/ilyasben/taskAPI/model",
+  "com/ilyasben/taskAPI/repository"
+]

@@ -1,58 +1,62 @@
 {
   "events": [
     {
-      "defined_class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
+      "defined_class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
       "event": "call",
       "id": 1,
-      "lineno": 57,
-      "method_id": "testLogin",
-      "path": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java",
+      "lineno": 105,
+      "method_id": "UserService_deleteUser_ThrowsUserNotFoundException_WhenUserDoesNotExist",
+      "path": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java",
       "receiver": {
-        "class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
-        "object_id": 876945112,
-        "value": "com.ilyasben.taskAPI.api.controller.AuthControllerTests@34451ed8"
+        "class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
+        "object_id": 1193164393,
+        "value": "com.ilyasben.taskAPI.api.service.UserServiceTests@471e3e69"
       },
       "static": false,
       "thread_id": 1
     },
     {
-      "defined_class": "com.ilyasben.taskAPI.controller.AuthController",
+      "defined_class": "com.ilyasben.taskAPI.service.UserService",
       "event": "call",
       "id": 2,
-      "lineno": 49,
-      "method_id": "login",
+      "lineno": 74,
+      "method_id": "deleteUser",
       "parameters": [
         {
-          "class": "com.ilyasben.taskAPI.dto.LoginDTO",
+          "class": "java.lang.Long",
           "kind": "req",
-          "name": "loginDTO",
-          "object_id": 1227659410,
-          "value": "LoginDTO(username=username, password=password)"
+          "name": "userId",
+          "object_id": 2125486231,
+          "value": "1"
         }
       ],
-      "path": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java",
+      "path": "src/main/java/com/ilyasben/taskAPI/service/UserService.java",
       "receiver": {
-        "class": "com.ilyasben.taskAPI.controller.AuthController",
-        "object_id": 87286516,
-        "value": "com.ilyasben.taskAPI.controller.AuthController@533e2f4"
+        "class": "com.ilyasben.taskAPI.service.UserService",
+        "object_id": 1098458637,
+        "value": "com.ilyasben.taskAPI.service.UserService@4179260d"
       },
       "static": false,
       "thread_id": 1
     },
     {
-      "elapsed": 0.0049802,
+      "elapsed": 0.0000302,
       "event": "return",
+      "exceptions": [
+        {
+          "class": "com.ilyasben.taskAPI.exception.UserNotFoundException",
+          "lineno": 75,
+          "message": "User not found",
+          "object_id": 621591737,
+          "path": "UserService.java"
+        }
+      ],
       "id": 3,
       "parent_id": 2,
-      "return_value": {
-        "class": "org.springframework.http.ResponseEntity",
-        "object_id": 79044247,
-        "value": "<200 OK OK,AuthResponseDTO(accessToken=token, tokenType=Bearer ),[]>"
-      },
       "thread_id": 1
     },
     {
-      "elapsed": 0.0147859,
+      "elapsed": 0.0000954,
       "event": "return",
       "id": 4,
       "parent_id": 1,
@@ -61,7 +65,7 @@
   ],
   "version": "1.2",
   "metadata": {
-    "name": "Auth controllers test login",
+    "name": "User services user service _ delete user _ throws user not found exception _ when user does not exist",
     "app": "taskAPI",
     "language": {
       "name": "java",
@@ -77,15 +81,15 @@
       "type": "tests"
     },
     "recording": {
-      "defined_class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
-      "method_id": "testLogin"
+      "defined_class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
+      "method_id": "UserService_deleteUser_ThrowsUserNotFoundException_WhenUserDoesNotExist"
     },
     "git": {
       "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
       "branch": "AppMapTest",
       "commit": "eb37141b5fba4dacc83dfa91269a480f7ceea6b4"
     },
-    "source_location": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java:57",
+    "source_location": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java:105",
     "frameworks": [
       {
         "name": "JUnit",
@@ -106,17 +110,17 @@
                     {
                       "children": [
                         {
-                          "name": "login",
+                          "name": "deleteUser",
                           "type": "function",
                           "static": false,
-                          "location": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java:49"
+                          "location": "src/main/java/com/ilyasben/taskAPI/service/UserService.java:74"
                         }
                       ],
-                      "name": "AuthController",
+                      "name": "UserService",
                       "type": "class"
                     }
                   ],
-                  "name": "controller",
+                  "name": "service",
                   "type": "package"
                 },
                 {
@@ -126,17 +130,17 @@
                         {
                           "children": [
                             {
-                              "name": "testLogin",
+                              "name": "UserService_deleteUser_ThrowsUserNotFoundException_WhenUserDoesNotExist",
                               "type": "function",
                               "static": false,
-                              "location": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java:57"
+                              "location": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java:105"
                             }
                           ],
-                          "name": "AuthControllerTests",
+                          "name": "UserServiceTests",
                           "type": "class"
                         }
                       ],
-                      "name": "controller",
+                      "name": "service",
                       "type": "package"
                     }
                   ],

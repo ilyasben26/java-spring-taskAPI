@@ -1,0 +1,44 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "UserService_getUsers_ReturnsListOfUsersDTO",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java:38"
+                          }
+                        ],
+                        "name": "UserServiceTests",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "service",
+                    "type": "package"
+                  }
+                ],
+                "name": "api",
+                "type": "package"
+              }
+            ],
+            "name": "taskAPI",
+            "type": "package"
+          }
+        ],
+        "name": "ilyasben",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  }
+]

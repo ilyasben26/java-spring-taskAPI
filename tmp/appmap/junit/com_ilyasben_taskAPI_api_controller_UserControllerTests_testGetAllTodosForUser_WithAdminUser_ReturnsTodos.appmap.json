@@ -1,58 +1,65 @@
 {
   "events": [
     {
-      "defined_class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
+      "defined_class": "com.ilyasben.taskAPI.api.controller.UserControllerTests",
       "event": "call",
       "id": 1,
-      "lineno": 57,
-      "method_id": "testLogin",
-      "path": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java",
+      "lineno": 91,
+      "method_id": "testGetAllTodosForUser_WithAdminUser_ReturnsTodos",
+      "path": "src/test/java/com/ilyasben/taskAPI/api/controller/UserControllerTests.java",
       "receiver": {
-        "class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
-        "object_id": 876945112,
-        "value": "com.ilyasben.taskAPI.api.controller.AuthControllerTests@34451ed8"
+        "class": "com.ilyasben.taskAPI.api.controller.UserControllerTests",
+        "object_id": 1822539890,
+        "value": "com.ilyasben.taskAPI.api.controller.UserControllerTests@6ca1c072"
       },
       "static": false,
       "thread_id": 1
     },
     {
-      "defined_class": "com.ilyasben.taskAPI.controller.AuthController",
+      "defined_class": "com.ilyasben.taskAPI.controller.UserController",
       "event": "call",
       "id": 2,
-      "lineno": 49,
-      "method_id": "login",
+      "lineno": 40,
+      "method_id": "getAllTodosForUser",
       "parameters": [
         {
-          "class": "com.ilyasben.taskAPI.dto.LoginDTO",
+          "class": "java.lang.Long",
           "kind": "req",
-          "name": "loginDTO",
-          "object_id": 1227659410,
-          "value": "LoginDTO(username=username, password=password)"
+          "name": "userId",
+          "object_id": 41907269,
+          "value": "2"
+        },
+        {
+          "class": "org.springframework.security.core.Authentication$MockitoMock$jxAyaWwP",
+          "kind": "req",
+          "name": "authentication",
+          "object_id": 1631749749,
+          "value": "Mock for Authentication, hashCode: 1631749749"
         }
       ],
-      "path": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java",
+      "path": "src/main/java/com/ilyasben/taskAPI/controller/UserController.java",
       "receiver": {
-        "class": "com.ilyasben.taskAPI.controller.AuthController",
-        "object_id": 87286516,
-        "value": "com.ilyasben.taskAPI.controller.AuthController@533e2f4"
+        "class": "com.ilyasben.taskAPI.controller.UserController",
+        "object_id": 1306043262,
+        "value": "com.ilyasben.taskAPI.controller.UserController@4dd8a37e"
       },
       "static": false,
       "thread_id": 1
     },
     {
-      "elapsed": 0.0049802,
+      "elapsed": 0.0000741,
       "event": "return",
       "id": 3,
       "parent_id": 2,
       "return_value": {
         "class": "org.springframework.http.ResponseEntity",
-        "object_id": 79044247,
-        "value": "<200 OK OK,AuthResponseDTO(accessToken=token, tokenType=Bearer ),[]>"
+        "object_id": 930305623,
+        "value": "<200 OK OK,[TodoDTO(id=null, content=null, completed=false, createdOn=null, updatedOn=null, user=null)],[]>"
       },
       "thread_id": 1
     },
     {
-      "elapsed": 0.0147859,
+      "elapsed": 0.0004807,
       "event": "return",
       "id": 4,
       "parent_id": 1,
@@ -61,7 +68,7 @@
   ],
   "version": "1.2",
   "metadata": {
-    "name": "Auth controllers test login",
+    "name": "User controllers test get all todos for user _ with admin user _ returns todos",
     "app": "taskAPI",
     "language": {
       "name": "java",
@@ -77,15 +84,15 @@
       "type": "tests"
     },
     "recording": {
-      "defined_class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
-      "method_id": "testLogin"
+      "defined_class": "com.ilyasben.taskAPI.api.controller.UserControllerTests",
+      "method_id": "testGetAllTodosForUser_WithAdminUser_ReturnsTodos"
     },
     "git": {
       "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
       "branch": "AppMapTest",
       "commit": "eb37141b5fba4dacc83dfa91269a480f7ceea6b4"
     },
-    "source_location": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java:57",
+    "source_location": "src/test/java/com/ilyasben/taskAPI/api/controller/UserControllerTests.java:91",
     "frameworks": [
       {
         "name": "JUnit",
@@ -106,13 +113,13 @@
                     {
                       "children": [
                         {
-                          "name": "login",
+                          "name": "getAllTodosForUser",
                           "type": "function",
                           "static": false,
-                          "location": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java:49"
+                          "location": "src/main/java/com/ilyasben/taskAPI/controller/UserController.java:40"
                         }
                       ],
-                      "name": "AuthController",
+                      "name": "UserController",
                       "type": "class"
                     }
                   ],
@@ -126,13 +133,13 @@
                         {
                           "children": [
                             {
-                              "name": "testLogin",
+                              "name": "testGetAllTodosForUser_WithAdminUser_ReturnsTodos",
                               "type": "function",
                               "static": false,
-                              "location": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java:57"
+                              "location": "src/test/java/com/ilyasben/taskAPI/api/controller/UserControllerTests.java:91"
                             }
                           ],
-                          "name": "AuthControllerTests",
+                          "name": "UserControllerTests",
                           "type": "class"
                         }
                       ],

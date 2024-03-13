@@ -1,0 +1,8 @@
+[
+  "com/ilyasben/taskAPI/api/service/UserServiceTests",
+  "com/ilyasben/taskAPI/dto/UserDTO",
+  "com/ilyasben/taskAPI/dto/UserDTO$UserDTOBuilder",
+  "com/ilyasben/taskAPI/model/User",
+  "com/ilyasben/taskAPI/model/User$UserBuilder",
+  "com/ilyasben/taskAPI/service/UserService"
+]

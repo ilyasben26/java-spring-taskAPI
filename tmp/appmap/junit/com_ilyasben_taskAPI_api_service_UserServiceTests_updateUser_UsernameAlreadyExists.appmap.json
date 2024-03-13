@@ -1,58 +1,69 @@
 {
   "events": [
     {
-      "defined_class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
+      "defined_class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
       "event": "call",
       "id": 1,
-      "lineno": 70,
-      "method_id": "testRegister",
-      "path": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java",
+      "lineno": 159,
+      "method_id": "updateUser_UsernameAlreadyExists",
+      "path": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java",
       "receiver": {
-        "class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
-        "object_id": 274725976,
-        "value": "com.ilyasben.taskAPI.api.controller.AuthControllerTests@105ffc58"
+        "class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
+        "object_id": 727140336,
+        "value": "com.ilyasben.taskAPI.api.service.UserServiceTests@2b5747f0"
       },
       "static": false,
       "thread_id": 1
     },
     {
-      "defined_class": "com.ilyasben.taskAPI.controller.AuthController",
+      "defined_class": "com.ilyasben.taskAPI.service.UserService",
       "event": "call",
       "id": 2,
-      "lineno": 59,
-      "method_id": "register",
+      "lineno": 57,
+      "method_id": "updateUser",
       "parameters": [
         {
-          "class": "com.ilyasben.taskAPI.dto.RegisterDTO",
+          "class": "java.lang.Long",
           "kind": "req",
-          "name": "registerDTO",
-          "object_id": 2076014264,
-          "value": "RegisterDTO(username=username, password=password)"
+          "name": "userId",
+          "object_id": 2125486231,
+          "value": "1"
+        },
+        {
+          "class": "com.ilyasben.taskAPI.request.CreateUserRequest",
+          "kind": "req",
+          "name": "updatedUserInfo",
+          "object_id": 1088361233,
+          "value": "CreateUserRequest(username=existingUsername, password=newPassword)"
         }
       ],
-      "path": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java",
+      "path": "src/main/java/com/ilyasben/taskAPI/service/UserService.java",
       "receiver": {
-        "class": "com.ilyasben.taskAPI.controller.AuthController",
-        "object_id": 575197504,
-        "value": "com.ilyasben.taskAPI.controller.AuthController@2248d140"
+        "class": "com.ilyasben.taskAPI.service.UserService",
+        "object_id": 925141804,
+        "value": "com.ilyasben.taskAPI.service.UserService@37248b2c"
       },
       "static": false,
       "thread_id": 1
     },
     {
-      "elapsed": 0.0000499,
+      "elapsed": 0.0000327,
       "event": "return",
+      "exceptions": [
+        {
+          "class": "com.ilyasben.taskAPI.exception.UsernameAlreadyExistsException",
+          "lineno": 58,
+          "message": "Username already exists",
+          "object_id": 1811257257,
+          "path": "UserService.java"
+        }
+      ],
       "id": 3,
       "parent_id": 2,
-      "return_value": {
-        "class": "org.springframework.http.ResponseEntity",
-        "object_id": 934426842,
-        "value": "<200 OK OK,User registered successfully,[]>"
-      },
       "thread_id": 1
     },
     {
-      "elapsed": 0.0001463,
+      "elapsed": 0.0006475,
       "event": "return",
       "id": 4,
       "parent_id": 1,
@@ -61,7 +72,7 @@
   ],
   "version": "1.2",
   "metadata": {
-    "name": "Auth controllers test register",
+    "name": "User services update user _ username already exists",
     "app": "taskAPI",
     "language": {
       "name": "java",
@@ -77,15 +88,15 @@
       "type": "tests"
     },
     "recording": {
-      "defined_class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
-      "method_id": "testRegister"
+      "defined_class": "com.ilyasben.taskAPI.api.service.UserServiceTests",
+      "method_id": "updateUser_UsernameAlreadyExists"
     },
     "git": {
       "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
       "branch": "AppMapTest",
       "commit": "eb37141b5fba4dacc83dfa91269a480f7ceea6b4"
     },
-    "source_location": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java:70",
+    "source_location": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java:159",
     "frameworks": [
       {
         "name": "JUnit",
@@ -108,17 +119,17 @@
                         {
                           "children": [
                             {
-                              "name": "testRegister",
+                              "name": "updateUser_UsernameAlreadyExists",
                               "type": "function",
                               "static": false,
-                              "location": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java:70"
+                              "location": "src/test/java/com/ilyasben/taskAPI/api/service/UserServiceTests.java:159"
                             }
                           ],
-                          "name": "AuthControllerTests",
+                          "name": "UserServiceTests",
                           "type": "class"
                         }
                       ],
-                      "name": "controller",
+                      "name": "service",
                       "type": "package"
                     }
                   ],
@@ -130,17 +141,17 @@
                     {
                       "children": [
                         {
-                          "name": "register",
+                          "name": "updateUser",
                           "type": "function",
                           "static": false,
-                          "location": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java:59"
+                          "location": "src/main/java/com/ilyasben/taskAPI/service/UserService.java:57"
                         }
                       ],
-                      "name": "AuthController",
+                      "name": "UserService",
                       "type": "class"
                     }
                   ],
-                  "name": "controller",
+                  "name": "service",
                   "type": "package"
                 }
               ],

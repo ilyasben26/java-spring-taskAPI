@@ -1,0 +1,2 @@
+Syntax error found near Identifier (SELECT ... FOR locking clause): select next value for users_seq
+Syntax error found near Numbered Bind Parameter (WHERE Clause): select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only

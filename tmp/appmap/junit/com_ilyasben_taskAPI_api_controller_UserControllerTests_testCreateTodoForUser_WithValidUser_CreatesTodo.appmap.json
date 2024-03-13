@@ -1,58 +1,72 @@
 {
   "events": [
     {
-      "defined_class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
+      "defined_class": "com.ilyasben.taskAPI.api.controller.UserControllerTests",
       "event": "call",
       "id": 1,
-      "lineno": 70,
-      "method_id": "testRegister",
-      "path": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java",
+      "lineno": 116,
+      "method_id": "testCreateTodoForUser_WithValidUser_CreatesTodo",
+      "path": "src/test/java/com/ilyasben/taskAPI/api/controller/UserControllerTests.java",
       "receiver": {
-        "class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
-        "object_id": 274725976,
-        "value": "com.ilyasben.taskAPI.api.controller.AuthControllerTests@105ffc58"
+        "class": "com.ilyasben.taskAPI.api.controller.UserControllerTests",
+        "object_id": 574647963,
+        "value": "com.ilyasben.taskAPI.api.controller.UserControllerTests@22406e9b"
       },
       "static": false,
       "thread_id": 1
     },
     {
-      "defined_class": "com.ilyasben.taskAPI.controller.AuthController",
+      "defined_class": "com.ilyasben.taskAPI.controller.UserController",
       "event": "call",
       "id": 2,
-      "lineno": 59,
-      "method_id": "register",
+      "lineno": 56,
+      "method_id": "createTodoForUser",
       "parameters": [
         {
-          "class": "com.ilyasben.taskAPI.dto.RegisterDTO",
+          "class": "java.lang.Long",
           "kind": "req",
-          "name": "registerDTO",
-          "object_id": 2076014264,
-          "value": "RegisterDTO(username=username, password=password)"
+          "name": "userId",
+          "object_id": 2125486231,
+          "value": "1"
+        },
+        {
+          "class": "com.ilyasben.taskAPI.request.CreateTodoRequest",
+          "kind": "req",
+          "name": "createTodoRequest",
+          "object_id": 1792672353,
+          "value": "CreateTodoRequest(content=null)"
+        },
+        {
+          "class": "org.springframework.security.core.Authentication$MockitoMock$jxAyaWwP",
+          "kind": "req",
+          "name": "authentication",
+          "object_id": 1009893576,
+          "value": "Mock for Authentication, hashCode: 1009893576"
         }
       ],
-      "path": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java",
+      "path": "src/main/java/com/ilyasben/taskAPI/controller/UserController.java",
       "receiver": {
-        "class": "com.ilyasben.taskAPI.controller.AuthController",
-        "object_id": 575197504,
-        "value": "com.ilyasben.taskAPI.controller.AuthController@2248d140"
+        "class": "com.ilyasben.taskAPI.controller.UserController",
+        "object_id": 1271893271,
+        "value": "com.ilyasben.taskAPI.controller.UserController@4bcf8d17"
       },
       "static": false,
       "thread_id": 1
     },
     {
-      "elapsed": 0.0000499,
+      "elapsed": 0.0000361,
       "event": "return",
       "id": 3,
       "parent_id": 2,
       "return_value": {
         "class": "org.springframework.http.ResponseEntity",
-        "object_id": 934426842,
-        "value": "<200 OK OK,User registered successfully,[]>"
+        "object_id": 1587838190,
+        "value": "<200 OK OK,To-Do added successfully to user.,[]>"
       },
       "thread_id": 1
     },
     {
-      "elapsed": 0.0001463,
+      "elapsed": 0.0001534,
       "event": "return",
       "id": 4,
       "parent_id": 1,
@@ -61,7 +75,7 @@
   ],
   "version": "1.2",
   "metadata": {
-    "name": "Auth controllers test register",
+    "name": "User controllers test create todo for user _ with valid user _ creates todo",
     "app": "taskAPI",
     "language": {
       "name": "java",
@@ -77,15 +91,15 @@
       "type": "tests"
     },
     "recording": {
-      "defined_class": "com.ilyasben.taskAPI.api.controller.AuthControllerTests",
-      "method_id": "testRegister"
+      "defined_class": "com.ilyasben.taskAPI.api.controller.UserControllerTests",
+      "method_id": "testCreateTodoForUser_WithValidUser_CreatesTodo"
     },
     "git": {
       "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
       "branch": "AppMapTest",
       "commit": "eb37141b5fba4dacc83dfa91269a480f7ceea6b4"
     },
-    "source_location": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java:70",
+    "source_location": "src/test/java/com/ilyasben/taskAPI/api/controller/UserControllerTests.java:116",
     "frameworks": [
       {
         "name": "JUnit",
@@ -108,13 +122,13 @@
                         {
                           "children": [
                             {
-                              "name": "testRegister",
+                              "name": "testCreateTodoForUser_WithValidUser_CreatesTodo",
                               "type": "function",
                               "static": false,
-                              "location": "src/test/java/com/ilyasben/taskAPI/api/controller/AuthControllerTests.java:70"
+                              "location": "src/test/java/com/ilyasben/taskAPI/api/controller/UserControllerTests.java:116"
                             }
                           ],
-                          "name": "AuthControllerTests",
+                          "name": "UserControllerTests",
                           "type": "class"
                         }
                       ],
@@ -130,13 +144,13 @@
                     {
                       "children": [
                         {
-                          "name": "register",
+                          "name": "createTodoForUser",
                           "type": "function",
                           "static": false,
-                          "location": "src/main/java/com/ilyasben/taskAPI/controller/AuthController.java:59"
+                          "location": "src/main/java/com/ilyasben/taskAPI/controller/UserController.java:56"
                         }
                       ],
-                      "name": "AuthController",
+                      "name": "UserController",
                       "type": "class"
                     }
                   ],

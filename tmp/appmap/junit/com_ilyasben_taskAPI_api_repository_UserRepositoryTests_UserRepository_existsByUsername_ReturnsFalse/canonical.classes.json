@@ -1,0 +1,6 @@
+[
+  "com/ilyasben/taskAPI/api/repository/UserRepositoryTests",
+  "com/ilyasben/taskAPI/model/User",
+  "com/ilyasben/taskAPI/model/User$UserBuilder",
+  "com/ilyasben/taskAPI/repository/UserRepository"
+]

@@ -1,0 +1,4 @@
+[
+  "insert into users (created_on,password,updated_on,username,id) values (?,?,?,?,?)",
+  "select u1_0.id,u1_0.created_on,u1_0.password,u1_0.updated_on,u1_0.username from users u1_0"
+]

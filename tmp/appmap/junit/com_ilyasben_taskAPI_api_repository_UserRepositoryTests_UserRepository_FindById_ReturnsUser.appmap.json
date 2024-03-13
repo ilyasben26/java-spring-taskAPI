@@ -1,0 +1,268 @@
+{
+  "events": [
+    {
+      "defined_class": "com.ilyasben.taskAPI.api.repository.UserRepositoryTests",
+      "event": "call",
+      "id": 1,
+      "lineno": 68,
+      "method_id": "UserRepository_FindById_ReturnsUser",
+      "path": "src/test/java/com/ilyasben/taskAPI/api/repository/UserRepositoryTests.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.api.repository.UserRepositoryTests",
+        "object_id": 1096579342,
+        "value": "com.ilyasben.taskAPI.api.repository.UserRepositoryTests@415c790e"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User",
+      "event": "call",
+      "id": 2,
+      "lineno": 20,
+      "method_id": "builder",
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "static": true,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000157,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1465278749,
+        "value": "User.UserBuilder(id=null, username=null, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 4,
+      "lineno": 20,
+      "method_id": "username",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 1040079744,
+          "value": "test_user01"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1465278749,
+        "value": "User.UserBuilder(id=null, username=test_user01, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000052,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1465278749,
+        "value": "User.UserBuilder(id=null, username=test_user01, password=null, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 6,
+      "lineno": 20,
+      "method_id": "password",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "password",
+          "object_id": 51958929,
+          "value": "test_password"
+        }
+      ],
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1465278749,
+        "value": "User.UserBuilder(id=null, username=test_user01, password=test_password, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.000004,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1465278749,
+        "value": "User.UserBuilder(id=null, username=test_user01, password=test_password, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+      "event": "call",
+      "id": 8,
+      "lineno": 20,
+      "method_id": "build",
+      "path": "src/main/java/com/ilyasben/taskAPI/model/User.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.model.User$UserBuilder",
+        "object_id": 1465278749,
+        "value": "User.UserBuilder(id=null, username=test_user01, password=test_password, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000037,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "com.ilyasben.taskAPI.model.User",
+        "object_id": 1795831717,
+        "value": "User(id=4, username=test_user01, password=test_password, roles=null, createdOn=null, updatedOn=null)"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0026934,
+      "event": "return",
+      "id": 10,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "User repositorys user repository _ find by id _ returns user",
+    "app": "taskAPI",
+    "language": {
+      "name": "java",
+      "version": "21.0.2+13-LTS-58",
+      "engine": "Java HotSpot(TM) 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "com.ilyasben.taskAPI.api.repository.UserRepositoryTests",
+      "method_id": "UserRepository_FindById_ReturnsUser"
+    },
+    "git": {
+      "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
+      "branch": "AppMapTest",
+      "commit": "eb37141b5fba4dacc83dfa91269a480f7ceea6b4"
+    },
+    "source_location": "src/test/java/com/ilyasben/taskAPI/api/repository/UserRepositoryTests.java:68",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "build",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        },
+                        {
+                          "name": "username",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        },
+                        {
+                          "name": "password",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        }
+                      ],
+                      "name": "User$UserBuilder",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "builder",
+                          "type": "function",
+                          "static": true,
+                          "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                        }
+                      ],
+                      "name": "User",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "model",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "UserRepository_FindById_ReturnsUser",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/test/java/com/ilyasben/taskAPI/api/repository/UserRepositoryTests.java:68"
+                            }
+                          ],
+                          "name": "UserRepositoryTests",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "repository",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "api",
+                  "type": "package"
+                }
+              ],
+              "name": "taskAPI",
+              "type": "package"
+            }
+          ],
+          "name": "ilyasben",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    }
+  ]
+}

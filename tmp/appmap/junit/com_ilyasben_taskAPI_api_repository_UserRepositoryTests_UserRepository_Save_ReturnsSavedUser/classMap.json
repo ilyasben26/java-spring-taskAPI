@@ -1,0 +1,86 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "build",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                      },
+                      {
+                        "name": "username",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                      },
+                      {
+                        "name": "password",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                      }
+                    ],
+                    "name": "User$UserBuilder",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "builder",
+                        "type": "function",
+                        "static": true,
+                        "location": "src/main/java/com/ilyasben/taskAPI/model/User.java:20"
+                      }
+                    ],
+                    "name": "User",
+                    "type": "class"
+                  }
+                ],
+                "name": "model",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "UserRepository_Save_ReturnsSavedUser",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/test/java/com/ilyasben/taskAPI/api/repository/UserRepositoryTests.java:29"
+                          }
+                        ],
+                        "name": "UserRepositoryTests",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "repository",
+                    "type": "package"
+                  }
+                ],
+                "name": "api",
+                "type": "package"
+              }
+            ],
+            "name": "taskAPI",
+            "type": "package"
+          }
+        ],
+        "name": "ilyasben",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  }
+]

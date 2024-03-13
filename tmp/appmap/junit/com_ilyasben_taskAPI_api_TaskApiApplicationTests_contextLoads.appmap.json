@@ -1,0 +1,99 @@
+{
+  "events": [
+    {
+      "defined_class": "com.ilyasben.taskAPI.api.TaskApiApplicationTests",
+      "event": "call",
+      "id": 1,
+      "lineno": 11,
+      "method_id": "contextLoads",
+      "path": "src/test/java/com/ilyasben/taskAPI/api/TaskApiApplicationTests.java",
+      "receiver": {
+        "class": "com.ilyasben.taskAPI.api.TaskApiApplicationTests",
+        "object_id": 70289892,
+        "value": "com.ilyasben.taskAPI.api.TaskApiApplicationTests@43089e4"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000101,
+      "event": "return",
+      "id": 2,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Task api applications context loads",
+    "app": "taskAPI",
+    "language": {
+      "name": "java",
+      "version": "21.0.2+13-LTS-58",
+      "engine": "Java HotSpot(TM) 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "com.ilyasben.taskAPI.api.TaskApiApplicationTests",
+      "method_id": "contextLoads"
+    },
+    "git": {
+      "repository": "https://github.com/ilyasben26/java-spring-taskAPI.git",
+      "branch": "AppMapTest",
+      "commit": "eb37141b5fba4dacc83dfa91269a480f7ceea6b4"
+    },
+    "source_location": "src/test/java/com/ilyasben/taskAPI/api/TaskApiApplicationTests.java:11",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "contextLoads",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/test/java/com/ilyasben/taskAPI/api/TaskApiApplicationTests.java:11"
+                        }
+                      ],
+                      "name": "TaskApiApplicationTests",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "api",
+                  "type": "package"
+                }
+              ],
+              "name": "taskAPI",
+              "type": "package"
+            }
+          ],
+          "name": "ilyasben",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    }
+  ]
+}
